@@ -10,8 +10,8 @@ function Login() {
       <Grid item xs={12}>
 
         <Box display="flex" justifyContent="center" alignItems="center" height="80vh">
-          <Box className="card" width={340} height="50vh" borderRadius={5} 
-                marginTop={12} display="flex" justifyContent="center" alignItems="center">
+          <Box className="card" width={340} height="50vh" borderRadius={5}
+            marginTop={12} display="flex" justifyContent="center" alignItems="center">
             <Box>
               <Typography className='form-title' variant="h4" align="center">
                 Login
@@ -23,17 +23,28 @@ function Login() {
                 </Box>
 
                 <Box marginY={4}>
-                  <TextField  className='form-input' id="standard-basic" type="password" label="Senha" required />
+                  <TextField className='form-input' id="standard-basic" type="password" label="Senha" required />
                 </Box>
                 <Box marginTop={2} textAlign='center'>
-                    <Link to='/home' className='text-decorator-none'>
-                    <Button variant="contained" color="secondary" className="botao">  
-                    Login
+                  <Link to='/home' className='text-decorator-none'>
+                    <Button variant="contained" color="secondary" className="botao">
+                      Login
                     </Button>
+                  </Link>
+                  <Box>
+                    <Typography variant="h6" color="inherit">
+                      Você já tem sua conta?
+                    </Typography>
+                    <Link to='/cadastro'>
+                      <Typography variant="h6" color="inherit">
+                        Cadastre-se
+                      </Typography>
                     </Link>
+                  </Box>
+
                 </Box>
+
               </form>
-                            
             </Box>
           </Box>
         </Box>

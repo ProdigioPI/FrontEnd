@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NavBar from './componentes/estaticos/navbar/NavBar';
 import Footer from './componentes/estaticos/footer/Footer';
 import Login from './paginas/login/Login';
+import Cadastro from './paginas/cadastro/Cadastro';
 import './App.css';
+import Home from './paginas/home/Home';
 
 
 function App() {
@@ -21,8 +23,14 @@ function App() {
               <Login />
             </Route>
 
+            <Route path='/cadastro'>
+              <Cadastro />
+            </Route>
+
           <Route path='/home'>
+            <Home />
           </Route> 
+          
           </div>
         </Switch>  
         <Footer />
