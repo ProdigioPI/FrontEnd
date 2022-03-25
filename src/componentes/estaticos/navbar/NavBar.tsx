@@ -14,7 +14,7 @@ function NavBar() {
                        Prodigio
                     </Typography>
                     <Link className='text-decorator-none'to='/login'>
-                            <Typography className='title' variant="h6" color="inherit">
+                            <Typography className='title' variant="h5" color="inherit">
                                 Logout
                             </Typography>
                     </Link>
