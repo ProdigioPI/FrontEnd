@@ -29,7 +29,6 @@ function App() {
             <Cadastrar />
           </Route>
           <Route path='/home'>
-          <NavBarLogado/>
             <Home />
           </Route>
         </div>

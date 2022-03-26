@@ -1,122 +1,45 @@
-/* eslint-disable no-nested-ternary */
 import React from 'react';
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import List from '@material-ui/core/List';
-import Link, { LinkProps } from '@material-ui/core/Link';
-import ListItem from '@material-ui/core/ListItem';
-import Collapse from '@material-ui/core/Collapse';
-import ListItemText from '@material-ui/core/ListItemText';
-import Typography from '@material-ui/core/Typography';
-import ExpandLess from '@material-ui/icons/ExpandLess';
-import ExpandMore from '@material-ui/icons/ExpandMore';
-import Breadcrumbs from '@material-ui/core/Breadcrumbs';
-import { Route, MemoryRouter } from 'react-router';
-import { Link as RouterLink } from 'react-router-dom';
-import { Omit } from '@material-ui/types';
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import { Link } from 'react-router-dom';
+import Search from '../../search/Search';
+import { Grid } from '@material-ui/core';
 import './NavItem.css'
 
-interface ListItemLinkProps extends LinkProps {
-  to: string;
-  open?: boolean;
-}
+const useStyles = makeStyles({
+  root: {
+    flexGrow: 1,
+    backgroundColor: '#0a72c7',
+  },
+});
 
-const breadcrumbNameMap: { [key: string]: string } = {
-  '/materia': 'Materia',
-  '/materia/matematica': 'matematica',
-  '/trash': 'Trash',
-  '/spam': 'Spam',
-  '/drafts': 'Drafts',
-};
-
-function ListItemLink(props: Omit<ListItemLinkProps, 'ref'>) {
-  const { to, open, ...other } = props;
-  const primary = breadcrumbNameMap[to];
-
-  return (
-    <li>
-      <ListItem button component={RouterLink} to={to} {...other}>
-        <ListItemText primary={primary} />
-        {open != null ? open ? <ExpandLess /> : <ExpandMore /> : null}
-      </ListItem>
-    </li>
-  );
-}
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      display: 'flex',
-      flexDirection: 'column',
-      width: 360,
-    },
-    lists: {
-      backgroundColor: theme.palette.background.paper,
-      marginTop: theme.spacing(1),
-    },
-    nested: {
-      paddingLeft: theme.spacing(4),
-    },
-  }),
-);
-
-interface LinkRouterProps extends LinkProps {
-  to: string;
-  replace?: boolean;
-}
-
-const LinkRouter = (props: LinkRouterProps) => <Link {...props} component={RouterLink as any} />;
-
-export default function RouterBreadcrumbs() {
+export default function CenteredTabs() {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(true);
+  const [value, setValue] = React.useState(0);
 
-  const handleClick = () => {
-    setOpen((prevOpen) => !prevOpen);
+  const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
+    setValue(newValue);
   };
 
   return (
-    <MemoryRouter initialEntries={['/materia']} initialIndex={0} >
-      <div className={classes.root}>
-        <Route>
-          {({ location }) => {
-            const pathnames = location.pathname.split('/').filter((x) => x);
-
-            return (
-              <Breadcrumbs aria-label="breadcrumb" className='background-Navitem' >
-                <LinkRouter color="inherit" to="/">
-                  Materias
-                </LinkRouter>
-                {pathnames.map((value, index) => {
-                  const last = index === pathnames.length - 1;
-                  const to = `/${pathnames.slice(0, index + 1).join('/')}`;
-
-                  return last ? (
-                    <Typography color="textPrimary" key={to}>
-                      {breadcrumbNameMap[to]}
-                    </Typography>
-                  ) : (
-                    <LinkRouter color="inherit" to={to} key={to}>
-                      {breadcrumbNameMap[to]}
-                    </LinkRouter>
-                  );
-                })}
-              </Breadcrumbs>
-            );
-          }}
-        </Route>
-        <nav className={classes.lists} aria-label="mailbox folders" >
-          <List className='background-Navitem' >
-            <ListItemLink to="/materia" open={open} onClick={handleClick} />
-            <Collapse component="li" in={open} timeout="auto" unmountOnExit>
-              <List disablePadding>
-                <ListItemLink to="/materia/matematica" className={classes.nested} />
-              </List>
-            </Collapse>
-            <ListItemLink to="/trash" />
-            <ListItemLink to="/spam" />
-          </List>
-        </nav>
-      </div>
-    </MemoryRouter>
+    <Grid className='background-Navitem'>
+      <Paper className={classes.root} >
+        <Tabs style={{ color: 'white'}}
+          value={value}
+          onChange={handleChange}
+          indicatorColor="primary"
+          textColor="primary"
+          centered
+        >
+          <Link to="/login" >
+            <Tab label="Home" />
+          </Link>
+          <Tab label="Item Two" />
+          <Tab label="Item Three" />
+        </Tabs>
+      </Paper>
+    </Grid>
   );
 }

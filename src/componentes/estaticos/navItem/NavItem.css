@@ -1,4 +1,9 @@
 .background-Navitem{
-        background-color: rgb(47, 124, 197) !important;
+        background-color: #0a72c7 !important;
+        color: white !important;
 
+}
+.text-decorator-none{
+        text-decoration: none;
+        color: white;
 }

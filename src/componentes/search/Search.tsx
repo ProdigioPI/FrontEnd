@@ -16,7 +16,6 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import { Link } from 'react-router-dom'
 import MoreIcon from '@material-ui/icons/MoreVert';
 import { Button } from '@material-ui/core';
-import './NavBarLogado.css'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -35,21 +34,22 @@ const useStyles = makeStyles((theme: Theme) =>
     search: {
       position: 'relative',
       borderRadius: theme.shape.borderRadius,
-      backgroundColor: alpha(theme.palette.common.white, 0.15),
+      backgroundColor: alpha(theme.palette.common.white, 0.2),
       '&:hover': {
-        backgroundColor: alpha(theme.palette.common.white, 0.25),
+        backgroundColor: alpha(theme.palette.common.white, 0.2),
       },
-      marginRight: theme.spacing(2),
+      marginRight: theme.spacing(0),
       marginLeft: 0,
       width: '100%',
+      padding: '8px',
       [theme.breakpoints.up('sm')]: {
-        marginLeft: theme.spacing(3),
-        width: 'auto',
+        marginLeft: theme.spacing(0),
+        width: '100%',
       },
     },
     searchIcon: {
       padding: theme.spacing(0, 2),
-      height: '100%',
+      height: '80%',
       position: 'absolute',
       pointerEvents: 'none',
       display: 'flex',
@@ -120,9 +120,6 @@ export default function PrimarySearchAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}><Button>Profile</Button></MenuItem>
-      <MenuItem onClick={handleMenuClose}><Button>My account</Button></MenuItem>
-      <MenuItem onClick={handleMenuClose}><Link className='text-decorator-none ' to='/login'><Button>Logout</Button></Link></MenuItem>
     </Menu>
   );
 
@@ -137,33 +134,6 @@ export default function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="secondary">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton aria-label="show 11 new notifications" color="inherit">
-          <Badge badgeContent={11} color="secondary">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
-      </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
-      </MenuItem>
     </Menu>
   );
 
@@ -171,28 +141,21 @@ export default function PrimarySearchAppBar() {
     <div className={classes.grow}>
       <AppBar position="static">
         <Toolbar style={{ backgroundColor: '#0a72c7', padding: '15px'}}>
+          <div className={classes.search}>
+            <div className={classes.searchIcon}>
+              <SearchIcon />
+            </div>
+            <InputBase
+              placeholder="Search…"
+              classes={{
+                root: classes.inputRoot,
+                input: classes.inputInput,
+              }}
+              inputProps={{ 'aria-label': 'search' }}
+            />
+          </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton aria-label="show 17 new notifications" color="inherit">
-              <Badge badgeContent={17} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
           </div>
           <div className={classes.sectionMobile}>
             <IconButton
