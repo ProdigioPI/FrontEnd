@@ -27,7 +27,7 @@ function Login() {
                                 </Box>
                                 <Box marginTop={2} textAlign='center'>
                                     <Link to='/home' className='text-decorator-none'>
-                                        <Button variant="contained" color="secondary" className="botao">
+                                        <Button variant="contained" className="botao">
                                             Login
                                         </Button>
                                     </Link>
@@ -35,12 +35,12 @@ function Login() {
                                 
 
                                 <Box>
-                                    <Typography  variant="h6" color="inherit">
+                                    <Typography className='form-title' variant="h6" color="inherit">
                                         Você já tem sua conta?
                                     </Typography>
-                                    <Link to='/cadastro'>
-                                        <Typography variant="h6" color="inherit">
-                                            Cadastre-se
+                                    <Link to='/cadastro' className='text-decorator-none'>
+                                        <Typography className='text-link' variant="h5" color="inherit">
+                                            cadastre-se
                                         </Typography>
                                     </Link>
                                 </Box>

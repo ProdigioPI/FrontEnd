@@ -11,21 +11,30 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import  {Link as Router}  from 'react-router-dom' ;
+import  {Link as Router}  from 'react-router-dom';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
 
-function Copyright(props: any) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://github.com/ProdigioPI">
-        Prodigio
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
 
+function RadioButtonsGroup() {
+    const [value, setValue] = React.useState('female');
+  
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      setValue((event.target as HTMLInputElement).value);
+    };
+  
+    return (
+      <FormControl component="fieldset">
+        <FormLabel component="legend">Escolha seu tipo de conta: </FormLabel>
+        <RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}>
+          <FormControlLabel value="Aluno" control={<Radio />} label="Aluno" />
+          <FormControlLabel value="Professor" control={<Radio />} label="Professor" />
+        </RadioGroup>
+      </FormControl>
+    );
+  }
 
 const theme = createTheme();
 
@@ -87,8 +96,10 @@ export default function SignUp() {
                   type="date"
                   name="date"
                   autoComplete="date"
+                  
                 />
               </Grid>
+              
               <Grid item xs={12}>
                 <TextField
                   required
@@ -112,13 +123,16 @@ export default function SignUp() {
                 />
               </Grid>
               <Grid item xs={12}>
+                  <RadioButtonsGroup/>
+              </Grid>
+              <Grid item xs={12}>
                 <FormControlLabel
                   control={<Checkbox value="allowExtraEmails" color="primary" />}
                   label="Eu aceito vender minha alma e concordo com os termos."
                 />
               </Grid>
             </Grid>
-            <Router to='/login'>
+            <Router to='/login'  className='text-decorator-none'>
                 <Button
                 type="submit"
                 fullWidth
@@ -132,7 +146,7 @@ export default function SignUp() {
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 5 }} />
+
       </Container>
     </ThemeProvider>
   );

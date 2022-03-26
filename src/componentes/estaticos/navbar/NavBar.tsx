@@ -9,18 +9,17 @@ function NavBar() {
     return (
         <>
             <AppBar position="static" className='back'>
-                <Toolbar className='bar'>
-                    <Typography className='title' variant="h6">
-                       Prodigio
+                    
+                <Toolbar >
+                    <Typography className='title ' variant="h4">
+                      Prodigio
                     </Typography>
-                    <Link className='text-decorator-none'to='/login'>
-                            <Typography className='title' variant="h5" color="inherit">
+
+                    <Link className='text-decorator-none 'to='/login'>
+                            <Typography className='title ' variant="h5" color="inherit">
                                 Logout
                             </Typography>
                     </Link>
-                    <IconButton edge="start" color="inherit" aria-label="menu">
-                        <MenuIcon />
-                    </IconButton>
                 </Toolbar>
             </AppBar>
         </>

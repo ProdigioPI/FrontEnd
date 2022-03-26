@@ -5,9 +5,18 @@
         transparencia em cores hexadecial: ao final de uma cor hexadecimal, passe um valor
         entre 1 a 99, informando o grau de transparencia da cor
     */ 
-    background: #1b1b1b90!important;
+    background: #008eb1!important;
 }
-
+.botao{
+    color: #FFFFFF !important;
+    font-weight: bold;
+    background-color: rgba(0, 173, 231, 0.616)!important;
+}
+.botao:hover{
+    color: rgb(177, 177, 177);
+    background-color: rgb(250, 0, 0);
+    border-color: #03c7a6;
+}
 .form{
     width: 270px;
 }
@@ -23,29 +32,36 @@
                 elementos Depois ou Antes de um clique ou interação da pessoa usuaária*/
 .MuiInput-underline::after,
 .MuiInput-underline::before{
-    border-bottom: 2px solid #FFFFFF!important;
+    border-bottom: 2px solid #00ddb8!important;
 }
 
 
 .MuiFormLabel-root,
 .MuiInputBase-root,
 .MuiFormLabel-root.Mui-focused{
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 .form-title{
-    color: #FFFFFF;
+    color: #FFFFFF!important;
     font-weight: bold;
+}
+.text-link{
+    color: #0b0049!important;
+    font-weight: bold;
+}
+.text-link:hover{
+    color: #4426eb !important;
 }
 
 .background{
-    background: rgb(231, 227, 227)!important;
+    background: rgb(225, 242, 255)!important;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 
-    width: 100vw;
-    min-height: calc(100vh - 64px); 
+    width: 98.9vw;
+    min-height: calc(110vh - 4px); 
 
     /* Calc: função do CSS que faz um calculo com medidas e retorno seu resultado. No caso
             abaixo estamos calculando a largura da tela da pessoa menos a altura do Navbar*/
