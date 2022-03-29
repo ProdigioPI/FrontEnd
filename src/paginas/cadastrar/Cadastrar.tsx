@@ -17,6 +17,7 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 
+import './Cadastrar.css'
 
 function RadioButtonsGroup() {
     const [value, setValue] = React.useState('female');
@@ -49,7 +50,8 @@ export default function SignUp() {
   };
 
   return (
-    <ThemeProvider theme={theme}>
+    <Grid className='style-cadastro' xs={12}>
+      <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -149,5 +151,6 @@ export default function SignUp() {
 
       </Container>
     </ThemeProvider>
+    </Grid>
   );
 }

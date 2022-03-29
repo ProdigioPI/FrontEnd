@@ -8,6 +8,7 @@ import GridItem from '../../componentes/gridItem/GridItem';
 import Search from '../../componentes/search/Search';
 import NavBar from '../../componentes/estaticos/navbar/NavBar';
 import NavBarLogado from '../../componentes/estaticos/navbarlogado/NavBarLogado';
+import CarouselHome from '../../componentes/carousel/CarouselHome';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -38,15 +39,24 @@ export default function CenteredGrid() {
                     <Grid item xs={4}>
                         <NavBarLogado />
                     </Grid>
-                
-                <Grid item xs={12} >
-                    <NavItem />
-                </Grid>
-                </Grid>
 
+                    <Grid item xs={12} >
+                        <NavItem />
+                    </Grid>
+
+                    <Grid item xs={12}>
+                        <CarouselHome />
+                    </Grid>
+
+                </Grid>
+            </Grid>
+
+
+            <Grid container>
                 <Grid item xs={12} className="grid">
                     <GridItem />
                 </Grid>
+
                 <Grid item xs={12}>
                     <Paper className={classes.paper}>xs=12</Paper>
                 </Grid>

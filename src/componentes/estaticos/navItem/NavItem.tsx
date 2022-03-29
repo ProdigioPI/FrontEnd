@@ -26,18 +26,47 @@ export default function CenteredTabs() {
   return (
     <Grid className='background-Navitem'>
       <Paper className={classes.root} >
-        <Tabs style={{ color: 'white'}}
+        <Tabs
           value={value}
           onChange={handleChange}
           indicatorColor="primary"
-          textColor="primary"
           centered
         >
-          <Link to="/login" >
-            <Tab label="Home" />
+
+          <Link to="/home" className='link-style' >
+            <Tab label="Home" className='tab-style' />
           </Link>
-          <Tab label="Item Two" />
-          <Tab label="Item Three" />
+
+          <Link to="/materia/portuges" className='link-style' >
+            <Tab label="Português" className='tab-style' />
+          </Link>
+
+          <Link to="/materia/matematica" className='link-style' >
+            <Tab label="Matematica" className='tab-style' />
+          </Link>
+
+          <Link to="/materia/ciencias" className='link-style' >
+            <Tab label="Ciências" className='tab-style' />
+          </Link>
+
+          <Link to="/materia/historia" className='link-style' >
+            <Tab label="História" className='tab-style' />
+          </Link>
+
+          <Link to="/materia/geografia" className='link-style' >
+            <Tab label="Geografia" className='tab-style' />
+          </Link>
+
+          <Link to="/materia/filosofia" className='link-style' >
+            <Tab label="Filosofia" className='tab-style' />
+          </Link>
+
+          <Link to="/materia/inglês" className='link-style' >
+            <Tab label="Inglês" className='tab-style' />
+          </Link>
+
+
+
         </Tabs>
       </Paper>
     </Grid>

@@ -3,7 +3,18 @@
         color: white !important;
 
 }
-.text-decorator-none{
-        text-decoration: none;
-        color: white;
+
+.link-style{
+        text-decoration: none !important;
 }
+
+.tab-style{
+        text-decoration: none !important;
+        color: white !important;
+        font-weight: bolder !important;
+}
+
+.tab-style:hover{
+        background-color: #08080890;
+}
+

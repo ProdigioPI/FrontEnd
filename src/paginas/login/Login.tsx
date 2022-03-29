@@ -3,6 +3,8 @@ import { Box, Button, Grid, TextField, Typography } from '@material-ui/core'
 import "./Login.css"
 import { Link } from 'react-router-dom'
 
+import './Login.css'
+
 function Login() {
     const [value, setValue] = React.useState<Date | null>(null);
     return (
@@ -10,9 +12,9 @@ function Login() {
             <Grid item xs={12}>
 
                 <Box display="flex" justifyContent="center" alignItems="center" height="80vh">
-                    <Box className="card" width={340} height="50vh" borderRadius={5}
+                    <Box className="card" width={340} height="55vh" borderRadius={5}
                         marginTop={12} display="flex" justifyContent="center" alignItems="center">
-                        <Box>
+                        <Box marginTop={4}>
                             <Typography className='form-title' variant="h4" align="center">
                                 Login
                             </Typography>
@@ -34,7 +36,7 @@ function Login() {
                                 </Box>
                                 
 
-                                <Box>
+                                <Box marginTop={2} marginBottom={2} textAlign='center'>
                                     <Typography className='form-title' variant="h6" color="inherit">
                                         Você já tem sua conta?
                                     </Typography>
