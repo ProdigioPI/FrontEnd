@@ -1,16 +1,27 @@
 .card{
-    /* !important: informa ao React que os Estilos do CSS são mais importantes do que
-                    os estilos padrões do Material UI 
-    
-        transparencia em cores hexadecial: ao final de uma cor hexadecimal, passe um valor
-        entre 1 a 99, informando o grau de transparencia da cor
-    */ 
-    background: #1b1b1b90!important;
+    background: #008eb1!important;
 }
 
+.form-title{
+    color: #FFFFFF!important;
+    font-weight: bold;
+}
+
+.botao{
+    color: #FFFFFF !important;
+    font-weight: bold !important;
+    background-color: #04a0c7 !important;
+    margin-bottom: 15px !important;
+}
+.botao:hover{
+    color: rgb(177, 177, 177);
+    background-color: #023d6e50 !important;
+    border-color: #03c7a6;
+}
 .form{
     width: 270px;
 }
+
 .text-decorator-none{
     text-decoration: none;
 }
@@ -19,33 +30,31 @@
     width: 100%;
 }
 
+#standard-basic{
+    color: #FFFFFF !important;
+}
+
+#standard-basic-label{
+    color: #FFFFFF !important;
+}
+
 /*After e Before: são pseudo-classes que informam o comportamento de um ou vários 
                 elementos Depois ou Antes de um clique ou interação da pessoa usuaária*/
 .MuiInput-underline::after,
 .MuiInput-underline::before{
-    border-bottom: 2px solid #FFFFFF!important;
+    border-bottom: 2px solid #00ddb8!important;
 }
 
 
-.MuiFormLabel-root,
-.MuiInputBase-root,
-.MuiFormLabel-root.Mui-focused{
-    color: #FFFFFF;
-}
 
-.form-title{
-    color: #FFFFFF;
-    font-weight: bold;
+.text-link:hover{
+    color: #023d6e !important;
 }
 
 .background{
-    background: rgb(231, 227, 227)!important;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-
-    width: 100vw;
-    min-height: calc(100vh - 64px); 
+    background: rgb(225, 242, 255)!important;
+    width: 98.9vw;
+    min-height: calc(100vh - 15px); 
 
     /* Calc: função do CSS que faz um calculo com medidas e retorno seu resultado. No caso
             abaixo estamos calculando a largura da tela da pessoa menos a altura do Navbar*/

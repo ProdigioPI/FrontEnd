@@ -6,26 +6,28 @@ import Login from './paginas/login/Login';
 import './App.css';
 import Home from './paginas/home/Home';
 import Cadastrar from './paginas/cadastrar/Cadastrar';
+import NavBarLogado from './componentes/estaticos/navbarlogado/NavBarLogado';
 
 
 function App() {
   return (
     <Router>
-      <NavBar />
+      
       <Switch>
         <div style={{ minHeight: '100vh' }}>
 
           <Route exact path='/'>
+          <NavBar />
             <Login />
           </Route>
-
           <Route path='/login'>
+          <NavBar />
             <Login />
           </Route>
           <Route path='/cadastro'>
+          <NavBar />
             <Cadastrar />
           </Route>
-
           <Route path='/home'>
             <Home />
           </Route>

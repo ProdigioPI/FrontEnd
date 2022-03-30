@@ -1,0 +1,20 @@
+.background-Navitem{
+        background-color: #0a72c7 !important;
+        color: white !important;
+
+}
+
+.link-style{
+        text-decoration: none !important;
+}
+
+.tab-style{
+        text-decoration: none !important;
+        color: white !important;
+        font-weight: bolder !important;
+}
+
+.tab-style:hover{
+        background-color: #08080890;
+}
+
