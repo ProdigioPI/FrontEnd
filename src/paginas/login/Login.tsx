@@ -1,12 +1,56 @@
-import React from 'react'
 import { Box, Button, Grid, TextField, Typography } from '@material-ui/core'
-import "./Login.css"
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
+import React, { useEffect, useState, ChangeEvent } from 'react'
+import useLocalStorage from "react-use-localstorage";
+import UserLogin from '../../models/UsuarioLogin';
+import { login } from '../../services/Service';
 
 import './Login.css'
 
+
 function Login() {
-    const [value, setValue] = React.useState<Date | null>(null);
+
+
+    let history = useHistory();
+    const [token, setToken] = useLocalStorage('token');
+    const [userLogin, setUserLogin]  = useState<UserLogin>({
+        id: 0,
+        usuario: '',
+        senha: '',
+        token: ''
+    })
+
+    function updatedModel(e: ChangeEvent<HTMLInputElement>){
+        setUserLogin({
+            ...userLogin,
+            [e.target.name]: e.target.value
+        })
+    }
+
+    useEffect(()=>{
+        if(token != ''){
+            history.push('/home') //VERIFICAR COMO SERÃO PUXADOS OS PRODUTOS E HOME
+        }
+    }, [token])
+
+    async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
+        e.preventDefault();
+
+        try {
+            await login(`/usuarios/logar`, userLogin, setToken)
+
+            alert('Usuario logado com sucesso!');
+
+        }
+
+        catch(error){
+            alert('Dados inconscientes. Erro ao logar!');
+        }
+    }
+
+
+
+
     return (
         <Grid container className="background">
             <Grid item xs={12}>
@@ -19,20 +63,18 @@ function Login() {
                                 Login
                             </Typography>
                 
-                            <form className='form'>
+                            <form onSubmit={onSubmit} className='form'>
                                 <Box marginY={4}>
-                                    <TextField className='form-input' id="standard-basic" type="email" label="Email" required />
+                                    <TextField value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} className='form-input' name='usuario' id="standard-basic" type="email" label="Email" required />
                                 </Box>
 
                                 <Box marginY={4}>
-                                    <TextField className='form-input' id="standard-basic" type="password" label="Senha" required />
+                                    <TextField value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} className='form-input' name='senha' id="standard-basic" type="password" label="Senha" required />
                                 </Box>
                                 <Box marginTop={2} textAlign='center'>
-                                    <Link to='/home' className='text-decorator-none'>
-                                        <Button variant="contained" className="botao">
+                                        <Button  type="submit" variant="contained" className="botao">
                                             Login
                                         </Button>
-                                    </Link>
                                 </Box>
                                 
 

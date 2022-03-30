@@ -1,12 +1,13 @@
-interface User {
+interface Usuario {
 
     id: number;
     nome: string;
     usuario: string;
     senha: string;
     tipo: string;
-    data: string;
+    foto: string;
+    dataNascimento: string;
 
 }
 
-export default User;
+export default Usuario;
