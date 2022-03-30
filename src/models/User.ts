@@ -1,11 +1,12 @@
 interface User {
 
     id: number;
+    nome: string;
     usuario: string;
     senha: string;
     tipo: string;
-    data: Date;
-    
+    data: string;
+
 }
 
 export default User;
