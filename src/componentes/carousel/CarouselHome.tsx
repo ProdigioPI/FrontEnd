@@ -1,3 +1,4 @@
+import { ClassNames } from '@emotion/react'
 import React from 'react'
 import Carousel from 'react-elastic-carousel'
 import './CarouselHome.css'

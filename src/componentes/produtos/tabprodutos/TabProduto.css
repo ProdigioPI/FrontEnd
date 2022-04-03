@@ -1,0 +1,21 @@
+.titulo-tab{
+    font-weight: bold;
+    color: #ffffff;
+ }
+
+ .menu-tab{
+    font-weight: bold !important;
+    font-size: medium!important;
+    color: #bebebe !important;
+
+ }
+ .menu-tab:hover{
+   color: #151d24 !important;
+   background-color: #bebebe;
+   font-weight: bold !important;
+ }
+
+ .back-produto{
+    background:#2d3f4e !important;
+
+}

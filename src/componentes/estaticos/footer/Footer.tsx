@@ -12,9 +12,9 @@ const Footer = () => {
     return (
         <Grid container className="foot-base">
             <Grid container className="foot-links">
-                <Grid item xs={6}>
+            <Grid item xs={4} className='foot-style'>
                     <Box>
-                        <h5 className="title1">SOBRE NÓS:</h5>
+                        <h5 className="title2">Sobre nós</h5>
                         <p>
                             Plataforma ecommerce que conecta alunos e tutores, 
                             por valores acessiveis a todos.
@@ -23,10 +23,21 @@ const Footer = () => {
                         </p>
                     </Box>
                 </Grid>
-                <Grid item xs={6}>
-                    <h5 className="title2">Links</h5>
-                    <Box display="flex" justifyContent="space-evenly">
-                        <Box >
+                <Grid item xs={4} className='foot-style'>
+                    <Box>
+                        <h5 className="title2">Objetivos</h5>
+                        <p>
+                            Plataforma ecommerce que conecta alunos e tutores, 
+                            por valores acessiveis a todos.
+                            Promovendo educação de qualidade e alfabetização por
+                            meio da técnologia. Saiba mais.
+                        </p>
+                    </Box>
+                </Grid>
+                <Grid item xs={4} className='foot-style'>
+                    <h5 className="title2">Mais informações</h5>
+                    <Box display="flex" justifyContent="space-evenly" >
+                        <Box>
                             <ul className="list-unstyled">
                                 <li className="list-unstyled">
                                     <a href="#!">Sobre nós</a>
@@ -65,7 +76,7 @@ const Footer = () => {
 
             <Grid container className="footer-copyright">
             <Box>
-            <Box display="flex" alignItems="center" justifyContent="center" padding={2} >
+            <Box display="flex" alignItems="center" justifyContent="center" padding={2}>
                                 <a href="https://www.facebook.com/generationbrasil" target="_blank">
                                     <FacebookIcon className='foot-icons' />
                                 </a>
@@ -76,8 +87,8 @@ const Footer = () => {
                                     <LinkedInIcon className='foot-icons' />
                                 </a>  
                 </Box>
-                <Box className="foot-copy">
-                    &copy; {new Date().getFullYear()} Copyright: <a href="https://brasil.generation.org"> brasil.generation.org </a>
+                <Box className="foot-copy" style={{paddingBottom: '30px'}}>
+                Copyright &copy; {new Date().getFullYear()} | Todos os direitos reservados <a href="https://brasil.generation.org"> | Generation BR </a>
                 </Box>
             </Box>
             </Grid>

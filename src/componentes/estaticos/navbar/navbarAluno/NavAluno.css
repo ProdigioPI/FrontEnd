@@ -1,0 +1,76 @@
+.back-navbar{
+    background:#151d24 !important;
+    padding: 10px;
+
+}
+
+.icon-nav{
+    font-size: 1.5em!important;
+
+}
+.end-navbar{
+    display: flex;
+    justify-content: flex-end;
+}
+.button-home-nav{
+    margin-right: 79% !important;
+    
+}
+.font-menu-navbar{
+    justify-content: center;
+    font-family: Arial !important;
+    font-size: 2px;
+    font-weight: bold !important;
+    color: #082c6c !important;
+    margin-left: 4%!important;
+}
+.font-menu-navbar:hover{
+    color: #2069e0 !important;
+}
+
+#simple-menu .MuiPaper-root {
+    background: #fff !important;
+}
+
+.fonte-title{
+
+    font-family: Arial !important;
+    font-weight: bold !important;
+    color: #ffffff !important;
+    margin-right: 6px!important;
+
+}
+.font-linkNavbar{
+    justify-content: center;
+    font-family: Arial !important;
+    font-size: 2px;
+    font-weight: bold !important;
+    color: #ffffff !important;
+}
+.font-linkNavbar button:hover{
+    color: #2069e0 !important;
+}
+
+.muda{
+    justify-content: center;
+}
+.text-decorator-none{
+    text-decoration: none;
+}
+
+.button.back{
+
+    background-color: transparent !important;
+    font-weight: bold;
+
+}
+button.back:hover{
+    background-color: #f4d47c !important; 
+    color: #000000;
+}
+
+.logo-navbar img{
+    height: 50px;
+    padding-top: 10px;
+}
+
