@@ -12,6 +12,7 @@ function Login() {
 
 
     let history = useHistory();
+    //const { tipo } = useParams<{ tipo: string }>();
     const [token, setToken] = useLocalStorage('token');
     const [userLogin, setUserLogin]  = useState<UserLogin>({
         id: 0,
@@ -32,6 +33,15 @@ function Login() {
             history.push('/home') //VERIFICAR COMO SERÃO PUXADOS OS PRODUTOS E HOME
         }
     }, [token])
+
+    // useEffect(()=>{
+    //     if(tipo === 'A'){
+    //     history.push(`/home/${tipo}`, cadastroUsuario)
+    // }
+    // if(tipo === 'P'){
+    //     history.push(`/home/${tipo}`, cadastroUsuario)
+    // }
+    // }, [token])
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault();
