@@ -34,18 +34,22 @@ function DeletarProduto() {
           })
         }
 
-        function sim() {
-            history.push('/produto')
-            deleteId(`/produto/${id}`, {
+        async function sim() {
+            
+          try{
+            history.push('/produtos')
+            await deleteId(`/produto/${id}`, {
               headers: {
                 'Authorization': token
               }
             });
-            alert('Produto deletado com sucesso');
+            alert('Aula deletada com sucesso');
+          }catch(error){
+            alert('Error!! Ao Deletar Aula.')
           }
-        
+        }
           function nao() {
-            history.push('/produto')
+            history.push('/produtos')
           }
   return (
     <>

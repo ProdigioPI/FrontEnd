@@ -66,7 +66,7 @@ function Login() {
             <Grid item xs={12}>
 
                 <Box display="flex" justifyContent="center" alignItems="center" height="80vh">
-                    <Box className="card" width={340} height="55vh" borderRadius={5}
+                    <Box className="card" width={440} height="75vh" borderRadius={5}
                         marginTop={12} display="flex" justifyContent="center" alignItems="center">
                         <Box marginTop={4}>
                             <Typography className='form-title' variant="h4" align="center">

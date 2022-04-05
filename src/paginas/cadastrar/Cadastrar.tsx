@@ -95,7 +95,7 @@ function Cadastrar() {
           >
             {/* <form onSubmit={onSubmit}> */}
 
-            <Typography component="h1" variant="h5">
+            <Typography className='cadastro-title' component="h1" variant="h5">
               Cadastro
             </Typography>
             <Box component="form" noValidate onSubmit={onSubmit} sx={{ mt: 3 }}>
@@ -183,7 +183,7 @@ function Cadastrar() {
                   />
                 </Grid>
               </Grid>
-              <Button
+              <Button className='botao-cadastrar'
                 type="submit"
                 fullWidth
                 variant="contained"

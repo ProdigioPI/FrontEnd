@@ -20,8 +20,8 @@ function ListaCategorias() {
     }, [token])
 
     
-    async function getTema() {
-        await busca(`/categoria`, setCategorias, { // esse campo /categorias/all é um espelho da esturutra do back
+    async function getCategorias() {
+        await busca(`/categoria/all`, setCategorias, { // esse campo /categorias/all é um espelho da esturutra do back
             headers: {
                 'Authorization': token
             }
@@ -29,7 +29,7 @@ function ListaCategorias() {
     }
 
     useEffect(() => {
-        getTema()
+        getCategorias()
     }, [categoria.length])
 
     return (
@@ -40,10 +40,13 @@ function ListaCategorias() {
                         <Card variant="outlined">
                             <CardContent>
                                 <Typography color="textSecondary" gutterBottom>
-                                    Tema
+                                    Materia
                                 </Typography>
                                 <Typography variant="h5" component="h2">
                                     {categoria.materia}
+                                </Typography>
+                                 <Typography variant="h5" component="h2">
+                                    {categoria.areaDeEstudo}
                                 </Typography>
                             </CardContent>
                             <CardActions>

@@ -35,15 +35,20 @@ function DeletarCategoria() {
           })
         }
 
-        function sim() {
-            history.push('/categoria')
-            deleteId(`/categoria/${id}`, {
+        async function sim() {
+          try{
+            
+            await deleteId(`/categoria/${id}`, {
               headers: {
                 'Authorization': token
               }
             });
-            alert('Categoria deletado com sucesso');
+            alert('Materia deletado com sucesso.');
+            history.push('/categorias')
+          }catch(error){
+            alert("Erro!! Ao Deletar Materia.")
           }
+        }
         
           function nao() {
             history.push('/categoria')

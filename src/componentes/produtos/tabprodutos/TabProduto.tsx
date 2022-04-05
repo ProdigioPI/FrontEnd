@@ -6,6 +6,7 @@ import { TabContext, TabPanel } from '@material-ui/lab';
 
 import './TabProduto.css';
 import GridItem from '../../gridItem/GridItem';
+import ListaProdutos from '../listaProdutos/ListaProdutos';
 //import ModalPostagem from '../modalPostagem/ModalPostagem';
 //import ModalProduto from '../modalProduto/ModalProduto';
 //import Sobre from '../../sobre/Sobre';
@@ -33,9 +34,10 @@ function TabProduto() {
         <TabPanel value="1" >
           <Box  display="flex" flexWrap="wrap" justifyContent="center" style={{margin:'5px'}}>
             {/* <ModalProduto/> */}
-            <GridItem />
+            
           </Box>
-          <Box  display="flex" flexWrap="wrap" >
+          <Box  display="flex" flexGrow='Grow' >
+            <ListaProdutos/>
             {/* <ListaProduto /> */}
           </Box>
         </TabPanel>

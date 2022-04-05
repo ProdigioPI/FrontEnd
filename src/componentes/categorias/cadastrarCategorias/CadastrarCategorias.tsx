@@ -53,20 +53,30 @@ function CadastrarCategorias() {
             console.log("categoria" + JSON.stringify(categoria))
     
             if (id !== undefined) {
-                console.log(categoria)
-                put(`/categoria`, categoria, setCategoria, {
+                try{
+                    //console.log(categoria)
+                    put(`/categoria`, categoria, setCategoria, {
                     headers: {
                         'Authorization': token
                     }
                 })
-                alert('Categoria atualizado com sucesso');
+                    alert('Categoria atualizado com sucesso');
+                }catch(error){
+                    alert('Erro ao Atulizar!!');
+                }
             } else {
-                post(`/categoria`, categoria, setCategoria, {
+                try{
+                await post(`/categoria`, categoria, setCategoria, {
                     headers: {
                         'Authorization': token
                     }
                 })
-                alert('Categoria cadastrado com sucesso');
+                alert('Materia cadastrado com sucesso');
+                }catch(error){
+
+                alert('Erro ao cadastrar Materia')
+
+                }
             }
             back()
     
@@ -79,8 +89,9 @@ function CadastrarCategorias() {
     return (
         <Container maxWidth="sm" className="topo">
             <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro tema</Typography>
+                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Cadatrar Materia</Typography>
                 <TextField value={categoria.materia} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedCategoria(e)} id="materia" label="materia" variant="outlined" name="materia" margin="normal" fullWidth />
+                <TextField value={categoria.areaDeEstudo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedCategoria(e)} id="areaDeEstudo" label="area de estudo" variant="outlined" name="areaDeEstudo" margin="normal" fullWidth />
                 <Button type="submit" variant="contained" color="primary">
                     Finalizar
                 </Button>

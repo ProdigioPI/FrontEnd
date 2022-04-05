@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import Produto from '../../../models/Produto';
 import { busca } from '../../../services/Service'
 import { Box, Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
-import './ListaProduto.css';
+import './ListaProdutos.css';
 import useLocalStorage from 'react-use-localstorage';
 import { useHistory } from 'react-router-dom'
 
@@ -20,7 +20,7 @@ function ListaProdutos() {
     }, [token])
 
     async function getProduto(){
-        await busca("/produto", setProdutos, {
+        await busca("/produto/all", setProdutos, {
             headers: {
                 'Authorization': token
             }
@@ -50,7 +50,7 @@ function ListaProdutos() {
                                     {produto.descricao}
                                 </Typography>                               
                                 <Typography variant="body2" component="p">
-                                    Agenda
+                                    {produto.agenda}
                                 </Typography>
                                 <Typography variant="body2" component="p">
                                     {produto.valor}
@@ -62,14 +62,14 @@ function ListaProdutos() {
                             <CardActions>
                                 <Box display="flex" justifyContent="center" mb={1.5}>
 
-                                    <Link to={`formularioProduto/${produto.id}`} className="text-decorator-none" >
+                                    <Link to={`/formularioProduto/${produto.id}`} className="text-decorator-none" >
                                         <Box mx={1}>
                                             <Button variant="contained" className="marginLeft" size='small' color="primary" >
                                                 atualizar
                                             </Button>
                                         </Box>
                                     </Link>
-                                    <Link to={`deletarProduto/${produto.id}`} className="text-decorator-none">
+                                    <Link to={`/deletarProduto/${produto.id}`} className="text-decorator-none">
                                         <Box mx={1}>
                                             <Button variant="contained" size='small' color="secondary">
                                                 deletar

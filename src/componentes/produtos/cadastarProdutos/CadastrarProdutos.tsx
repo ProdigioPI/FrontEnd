@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
 import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core"
-import './CadastroPost.css';
+import './CadastrarProdutos.css';
 import { useHistory, useParams } from 'react-router-dom';
 import Categoria from '../../../models/Categoria';
 import useLocalStorage from 'react-use-localstorage';
@@ -51,7 +51,7 @@ function CadastrarProdutos() {
     }, [id])
 
     async function getCategorias() {
-        await busca("/categoria", setCategorias, {
+        await busca("/categoria/all", setCategorias, { // Se não fosse o Erick
             headers: {
                 'Authorization': token
             }
@@ -80,19 +80,27 @@ function CadastrarProdutos() {
         e.preventDefault()
 
         if (id !== undefined) {
+            try{
             put(`/produto`, produto, setProduto, {
                 headers: {
                     'Authorization': token
                 }
             })
-            alert('Produto atualizado com sucesso');
+            alert('Aula, atualizado com sucesso');
+        }catch (error){
+            alert('Error!! Ao Atualizar Aula')
+        }
         } else {
+            try{
             post(`/produto`, produto, setProduto, {
                 headers: {
                     'Authorization': token
                 }
             })
-            alert('Produto cadastrado com sucesso');
+            alert('Aula cadastrada com sucesso');
+        }catch (error){
+            alert('Error!! A o cadastrar Aula')
+        }
         }
         back()
 
@@ -105,11 +113,11 @@ function CadastrarProdutos() {
     return (
         <Container maxWidth="sm" className="topo">
             <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro postagem</Typography>
-                <TextField value={produto.nomeMateria} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="nomeMateria" label="nomeMateria" variant="outlined" name="nomeMateria" margin="normal" fullWidth />
-                <TextField value={produto.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="descricao" label="descricao" variant="outlined" name="descricao" margin="normal" fullWidth />
+                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Cadastrar Aula</Typography>
+                <TextField value={produto.nomeMateria} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="nomeMateria" label="Assunto da Aula" variant="outlined" name="nomeMateria" margin="normal" fullWidth  required/>
+                <TextField value={produto.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="descricao" label="descricao" variant="outlined" name="descricao" margin="normal" fullWidth required/>
                 <TextField value={produto.agenda} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="agenda" label="agenda" variant="outlined" name="agenda" margin="normal" fullWidth />
-                <TextField value={produto.valor} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="valor" label="valor" variant="outlined" name="valor" margin="normal" fullWidth />
+                <TextField value={produto.valor} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="valor" label="valor" variant="outlined" name="valor" margin="normal" fullWidth required/>
 
                 <FormControl >
                     <InputLabel id="demo-simple-select-helper-label">Categoria </InputLabel>
