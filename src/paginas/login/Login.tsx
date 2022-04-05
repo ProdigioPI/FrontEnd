@@ -30,7 +30,7 @@ function Login() {
 
     useEffect(()=>{
         if(token != ''){
-            history.push('/home') //VERIFICAR COMO SERÃO PUXADOS OS PRODUTOS E HOME
+            history.push(`/home/${'P'}`) //VERIFICAR COMO SERÃO PUXADOS OS PRODUTOS E HOME
         }
     }, [token])
 
