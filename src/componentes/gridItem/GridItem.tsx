@@ -3,6 +3,7 @@ import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Conteudo from '../conteudo/Conteudo';
+import ListaProdutos from '../produtos/listaProdutos/ListaProdutos';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -23,14 +24,10 @@ export default function NestedGrid() {
   function FormRow() {
     return (
       <React.Fragment>
-        <Grid item xs={4}>
-            <Conteudo/>
-        </Grid>
-        <Grid item xs={4}>
-            <Conteudo/>
-        </Grid>
-        <Grid item xs={4}>
-            <Conteudo/>
+        <Grid container >
+          <Grid item xs={12}>
+            <ListaProdutos />
+          </Grid>
         </Grid>
       </React.Fragment>
     );

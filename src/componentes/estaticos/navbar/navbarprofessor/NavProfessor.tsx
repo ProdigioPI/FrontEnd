@@ -68,21 +68,37 @@ function SimpleMenu() {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
             >
-                <MenuItem onClick={handleClose}><Link className='text-decorator-none' to='/posts'>
+                <MenuItem onClick={handleClose}>
+                    <Link className='text-decorator-none' to='/produtos'>
                     <Typography className='font-menu-navbar icon-nav' variant="h5" >
                         Aulas
                     </Typography>
                 </Link>
                 </MenuItem>
                 <MenuItem onClick={handleClose}>
-                    <Link className='text-decorator-none' to='/tema'>
+                    <Link className='text-decorator-none' to='/formularioProduto'>
                         <Typography className='font-menu-navbar icon-nav' variant="h5" >
-                        Agendamentos
+                            Adicionar Aulas
+                        </Typography>
+                    </Link>
+
+                </MenuItem>
+                <MenuItem onClick={handleClose}>
+                    <Link className='text-decorator-none' to='/formularioCategoria'>
+                        <Typography className='font-menu-navbar icon-nav' variant="h5" >
+                            Adicionar Materia
                         </Typography>
                     </Link>
                 </MenuItem>
                 <MenuItem onClick={handleClose}>
-                    <Link className='text-decorator-none' to='/formularioTema'>
+                    <Link className='text-decorator-none' to='/categorias'>
+                        <Typography className='font-menu-navbar icon-nav' variant="h5" >
+                            Todas as Materias
+                        </Typography>
+                    </Link>
+                </MenuItem>
+                <MenuItem onClick={handleClose}>
+                    <Link className='text-decorator-none' to=''>
                         <Typography className='font-menu-navbar icon-nav' variant="h5" >
                             Configurações
                         </Typography>
@@ -95,7 +111,7 @@ function SimpleMenu() {
                     </Typography>
 
                 </MenuItem>
-               
+
             </Menu>
         </>
     );
@@ -108,16 +124,16 @@ function NavProfessor() {
         <>
             <AppBar className="back-navbar" position="static">
                 <Toolbar className="end-navbar">
-                 
-                        <Link className='text-decorator-none button-home-nav' to='/home'>
-                            <Typography className='logo-navbar' variant="h5">
+
+                    <Link className='text-decorator-none button-home-nav' to='/home/P'>
+                        <Typography className='logo-navbar' variant="h5">
                             <img src="https://imgur.com/UNNxFgo.png" />
-                            </Typography>
-                        </Link >
+                        </Typography>
+                    </Link >
 
                     <ImageAvatars />
                     <SimpleMenu />
-                 
+
                 </Toolbar>
 
             </AppBar>

@@ -13,7 +13,7 @@
     justify-content: flex-end;
 }
 .button-home-nav{
-    margin-right: 79% !important;
+    margin-right: 59% !important;
     
 }
 .font-menu-navbar{
@@ -21,12 +21,13 @@
     font-family: Arial !important;
     font-size: 2px;
     font-weight: bold !important;
-    color: #082c6c !important;
-    margin-left: 4%!important;
+    color: #bebebe !important;
+    margin-left: 2%!important;
 }
 .font-menu-navbar:hover{
-    color: #2069e0 !important;
+    color: #7fadfd !important;
 }
+
 
 #simple-menu .MuiPaper-root {
     background: #fff !important;

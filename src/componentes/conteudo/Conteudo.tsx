@@ -1,19 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
+import useLocalStorage from 'react-use-localstorage';
+import Categoria from '../../models/Categoria';
+import { useHistory } from 'react-router-dom';
+import { busca } from '../../services/Service';
+import Produto from '../../models/Produto';
 
-const useStyles = makeStyles((theme: Theme) =>
+
+export default function ComplexGrid() {
+  const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       flexGrow: 1,
     },
     paper: {
-      padding: theme.spacing(2),
+      padding: theme.spacing(0),
       margin: 'auto',
-      maxWidth: 500,
+      maxWidth: 400,
     },
     image: {
       width: 128,
@@ -27,11 +34,35 @@ const useStyles = makeStyles((theme: Theme) =>
     },
   }),
 );
+  const classes = useStyles()
+  const [produto, setProdutos] = useState<Produto[]>([])
+    const [token, setToken] = useLocalStorage('token');
+    let history = useHistory();
 
-export default function ComplexGrid() {
-  const classes = useStyles();
+    useEffect(() => {
+        if (token == "") {
+            alert("Você precisa estar logado")
+            history.push("/login")
+        }
+    }, [token])
 
+    async function getProduto(){
+        await busca("/produto/all", setProdutos, {
+            headers: {
+                'Authorization': token
+            }
+        })
+    }
+
+    useEffect(() => {
+
+        getProduto()
+        
+    }, [produto.length])
   return (
+    <>
+    {
+                produto.map(produto => (
     <div className={classes.root}>
       <Paper className={classes.paper}>
         <Grid container spacing={2}>
@@ -44,13 +75,13 @@ export default function ComplexGrid() {
             <Grid item xs container direction="column" spacing={2}>
               <Grid item xs>
                 <Typography gutterBottom variant="subtitle1">
-                  Standard license
+                  {produto.nomeMateria}
                 </Typography>
                 <Typography variant="body2" gutterBottom>
-                  Full resolution 1920x1080 • JPEG
+                  {produto.agenda}
                 </Typography>
                 <Typography variant="body2" color="textSecondary">
-                  ID: 1030114
+                  {produto.categoria}
                 </Typography>
               </Grid>
               <Grid item>
@@ -60,11 +91,13 @@ export default function ComplexGrid() {
               </Grid>
             </Grid>
             <Grid item>
-              <Typography variant="subtitle1">$19.00</Typography>
+              <Typography variant="subtitle1">{produto.valor}</Typography>
             </Grid>
           </Grid>
         </Grid>
       </Paper>
-    </div>
+    </div>))
+    }
+    </>
   );
 }

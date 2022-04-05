@@ -108,7 +108,7 @@ function NavAluno() {
             <AppBar className="back-navbar" position="static">
                 <Toolbar className="end-navbar">
                  
-                        <Link className='text-decorator-none button-home-nav' to='/home'>
+                        <Link className='text-decorator-none button-home-nav' to='/home/A'>
                             <Typography className='logo-navbar' variant="h5">
                             <img src="https://imgur.com/UNNxFgo.png" />
                             </Typography>

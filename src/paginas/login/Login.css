@@ -1,5 +1,5 @@
 .card{
-    background: #008eb1!important;
+    background: #151d24!important;
 }
 
 .form-title{
@@ -10,7 +10,7 @@
 .botao{
     color: #FFFFFF !important;
     font-weight: bold !important;
-    background-color: #04a0c7 !important;
+    background-color: #151d24 !important;
     margin-bottom: 15px !important;
 }
 .botao:hover{
@@ -42,17 +42,21 @@
                 elementos Depois ou Antes de um clique ou interação da pessoa usuaária*/
 .MuiInput-underline::after,
 .MuiInput-underline::before{
-    border-bottom: 2px solid #00ddb8!important;
+    border-bottom: 2px solid #798997!important;
 }
 
-
+.text-link{
+    color: #798997!important;
+    font-weight: bold!important;
+    margin-top: 20px;
+}
 
 .text-link:hover{
     color: #023d6e !important;
 }
 
 .background{
-    background: rgb(225, 242, 255)!important;
+    background: #bebebe!important;
     width: 98.9vw;
     min-height: calc(100vh - 15px); 
 
