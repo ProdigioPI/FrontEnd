@@ -4,12 +4,12 @@ import React, { useEffect, useState, ChangeEvent } from 'react'
 import useLocalStorage from "react-use-localstorage";
 import UserLogin from '../../models/UsuarioLogin';
 import { buscaId, login } from '../../services/Service';
-
 import './Login.css'
 import { useDispatch } from 'react-redux';
 import { addId, addToken } from '../../store/tokens/action';
 import { UserState } from '../../store/tokens/keysRedux';
 import UsuarioLogin from '../../models/UsuarioLogin';
+import { toast } from 'react-toastify';
 
 
 
@@ -76,18 +76,31 @@ function Login() {
         try {
             await login(`/usuarios/logar`, userLogin, setRespUserLogin)
 
-            alert('Usuario logado com sucesso!');
+            toast.success('Usuario logado com sucesso!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
 
         }
-
         catch(error){
-            alert('Dados inconscientes. Erro ao logar!');
+            toast.error('Dados inconscientes. Erro ao logar!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
         }
     }
-
-
-
-
     return (
         <Grid container className="background">
             <Grid item xs={12}>

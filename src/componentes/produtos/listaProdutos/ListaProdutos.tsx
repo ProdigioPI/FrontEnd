@@ -4,10 +4,10 @@ import Produto from '../../../models/Produto';
 import { busca } from '../../../services/Service'
 import { Box, Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
 import './ListaProdutos.css';
-import useLocalStorage from 'react-use-localstorage';
 import { useHistory } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import { UserState } from '../../../store/tokens/keysRedux';
+import { toast } from 'react-toastify'
 
 function ListaProdutos() {
 
@@ -20,7 +20,16 @@ function ListaProdutos() {
 
     useEffect(() => {
         if (token == "") {
-            alert('Você não está logado')
+            toast.error("Você precisa estar logado", {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
             history.push("/login")
 
         }

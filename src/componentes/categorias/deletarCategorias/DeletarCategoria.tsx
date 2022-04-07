@@ -7,7 +7,7 @@ import { buscaId, deleteId } from '../../../services/Service';
 import Categoria from '../../../models/Categoria';
 import { useSelector } from 'react-redux';
 import { UserState } from '../../../store/tokens/keysRedux';
-
+import { toast } from 'react-toastify';
 
 function DeletarCategoria() {
     let history = useHistory();
@@ -19,7 +19,16 @@ function DeletarCategoria() {
 
   useEffect(() => {
       if (token == "") {
-          alert('Você não está logado')
+        toast.error("Você precisa estar logado", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
+          progress: undefined,
+        });
           history.push("/login")
 
       }
@@ -49,10 +58,28 @@ function DeletarCategoria() {
                 'Authorization': token
               }
             });
-            alert('Materia deletado com sucesso.');
+            toast.success('Materia deletado com sucesso.', {
+              position: "top-right",
+              autoClose: 2000,
+              hideProgressBar: false,
+              closeOnClick: false,
+              pauseOnHover: false,
+              draggable: false,
+              theme: "colored",
+              progress: undefined,
+            });
             history.push('/categorias')
           }catch(error){
-            alert("Erro!! Ao Deletar Materia.")
+            toast.error("Erro!! Ao Deletar Materia.", {
+              position: "top-right",
+              autoClose: 2000,
+              hideProgressBar: false,
+              closeOnClick: false,
+              pauseOnHover: false,
+              draggable: false,
+              theme: "colored",
+              progress: undefined,
+            });
           }
         }
         

@@ -19,6 +19,7 @@ import TabProduto from '../../../produtos/tabprodutos/TabProduto';
 import { useDispatch, useSelector } from 'react-redux';
 import { UserState } from '../../../../store/tokens/keysRedux';
 import { addToken } from '../../../../store/tokens/action';
+import { toast } from 'react-toastify';
 
 const useStyles1 = makeStyles((theme: Theme) =>
     createStyles({
@@ -59,6 +60,16 @@ function SimpleMenu() {
     };
     function goLogout() {
         dispatch(addToken(''))
+        toast.info("Usuario deslogado", {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+        });
         history.push('/login')
     }
 

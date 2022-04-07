@@ -9,6 +9,7 @@ import Categoria from '../../models/Categoria';
 import { useHistory } from 'react-router-dom';
 import { busca } from '../../services/Service';
 import Produto from '../../models/Produto';
+import { toast } from 'react-toastify';
 
 
 export default function ComplexGrid() {
@@ -41,7 +42,16 @@ export default function ComplexGrid() {
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+          toast.error("Você precisa estar logado", {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+        });
             history.push("/login")
         }
     }, [token])

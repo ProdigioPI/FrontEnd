@@ -4,7 +4,6 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Box, Button, ButtonGroup, Grid, TextField } from '@mui/material';
 import { Link, useHistory } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
 import HomeIcon from '@material-ui/icons/Home';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem'
@@ -19,6 +18,7 @@ import TabProduto from '../../../produtos/tabprodutos/TabProduto';
 import { addToken } from '../../../../store/tokens/action';
 import { UserState } from '../../../../store/tokens/keysRedux';
 import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 
 const useStyles1 = makeStyles((theme: Theme) =>
     createStyles({
@@ -58,6 +58,16 @@ function SimpleMenu() {
     };
     function goLogout() {
         dispatch(addToken(''))
+        toast.info("Usuario deslogado", {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+        });
         history.push('/login')
     }
 

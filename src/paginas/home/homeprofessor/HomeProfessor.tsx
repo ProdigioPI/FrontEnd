@@ -9,6 +9,7 @@ import TabProduto from '../../../componentes/produtos/tabprodutos/TabProduto';
 import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { UserState } from '../../../store/tokens/keysRedux';
+import { toast } from 'react-toastify';
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -34,7 +35,16 @@ export default function CenteredGrid() {
 
     useEffect(() => {
         if (token == "") {
-            alert('Você não está logado')
+            toast.error('Você não está logado', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+              });
             history.push("/login")
 
         }

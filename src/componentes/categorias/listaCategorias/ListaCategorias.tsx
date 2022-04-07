@@ -3,11 +3,11 @@ import { Box, Card, CardActions, CardContent, Button, Typography } from '@materi
 import { Link } from 'react-router-dom';
 import Categoria from '../../../models/Categoria';
 import './ListaCategorias.css';
-import useLocalStorage from 'react-use-localstorage';
 import { useHistory } from 'react-router-dom';
 import { busca } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { UserState } from '../../../store/tokens/keysRedux';
+import { toast } from 'react-toastify';
 
 function ListaCategorias() {
     const [categoria, setCategorias] = useState<Categoria[]>([])
@@ -18,7 +18,16 @@ function ListaCategorias() {
 
     useEffect(() => {
         if (token == "") {
-            alert('Você não está logado')
+            toast.error("Você precisa estar logado", {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
             history.push("/login")
 
         }

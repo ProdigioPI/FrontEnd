@@ -8,6 +8,7 @@ import Produto from '../../../models/Produto';
 import { busca, buscaId, post, put } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { UserState } from '../../../store/tokens/keysRedux';
+import { toast } from 'react-toastify';
 
 function CadastrarProdutos() {
     let history = useHistory();
@@ -20,7 +21,16 @@ function CadastrarProdutos() {
 
     useEffect(() => {
         if (token == "") {
-            alert('Você não está logado')
+            toast.error("Você precisa estar logado", {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
             history.push("/login")
 
         }
@@ -91,9 +101,27 @@ function CadastrarProdutos() {
                     'Authorization': token
                 }
             })
-            alert('Aula, atualizado com sucesso');
+            toast.success('Aula, atualizado com sucesso', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
         }catch (error){
-            alert('Error!! Ao Atualizar Aula')
+            toast.error('Error!! Ao Atualizar Aula', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
         }
         } else {
             try{
@@ -102,9 +130,27 @@ function CadastrarProdutos() {
                     'Authorization': token
                 }
             })
-            alert('Aula cadastrada com sucesso');
+            toast.success('Aula cadastrada com sucesso', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
         }catch (error){
-            alert('Error!! A o cadastrar Aula')
+            toast.error('Error!! Ao cadastrar Aula', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
         }
         }
         back()

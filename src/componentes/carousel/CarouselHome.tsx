@@ -7,11 +7,11 @@ import './CarouselHome.css'
 function CarouselHome(){
 
     var items = [
-        { img: "http://localhost:3000/1.png" },
-        { img: "http://localhost:3000/2.png" },
-        { img: "http://localhost:3000/3.png" },
-        { img: "http://localhost:3000/4.png" },
-        { img: "http://localhost:3000/5.png" } 
+        { img: "https://i.imgur.com/SWJKIn8.png" },
+        { img: "https://i.imgur.com/CrAxft0.png" },
+        { img: "https://i.imgur.com/NbFmyGR.png" },
+        { img: "https://i.imgur.com/ZoQq3BG.png" },
+        { img: "https://i.imgur.com/vhyS8RQ.png" } 
     ]
 
 

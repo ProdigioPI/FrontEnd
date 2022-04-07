@@ -19,12 +19,14 @@ import NavProfessor from './componentes/estaticos/navbar/navbarprofessor/NavProf
 import { Provider } from 'react-redux';
 import store from './store/store';
 import HomePrincipal from './paginas/home/HomePrincipal';
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 
 function App() {
   return (
     <Provider store={store} >
-
+      <ToastContainer />
       <Router>
 
         <Switch>

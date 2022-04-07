@@ -12,14 +12,28 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link as Router, useHistory } from 'react-router-dom';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
 
-
 import User from '../../models/Usuario';
 import { cadastroUsuario } from '../../services/Service';
 import FormControl from '@material-ui/core/FormControl';
 import { FormLabel, InputLabel, Radio, RadioGroup } from '@material-ui/core';
-
+import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom'
 import './Cadastrar.css'
 
+// cosntante para o campo de data
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    container: {
+      display: 'flex',
+      flexWrap: 'wrap',
+    },
+    textField: {
+      marginLeft: theme.spacing(1),
+      marginRight: theme.spacing(1),
+      width: 200,
+    },
+  }),
+);
 
 const theme = createTheme();
 
@@ -73,9 +87,27 @@ function Cadastrar() {
       console.log(user)
       cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
 
-      alert('Usuario cadastro com sucesso')
+      toast.success('Usuario cadastrado com sucesso', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+      });
     } else {
-      alert('Dados inconcistente. Favor vericar suas informações.')
+      toast.error('Dados inconcistente. Favor vericar suas informações.', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+      });
     }
   }
 
@@ -106,7 +138,7 @@ function Cadastrar() {
                     autoComplete="given-name"
                     name="nome"
                     fullWidth
-                    id="firstName"
+                    id="nome"
                     label="Nome Completo"
                     autoFocus
                     required
@@ -120,22 +152,25 @@ function Cadastrar() {
                     fullWidth
                     id="email"
                     label="Digite seu Email"
-                    name="usuario"
+                    name="email"
                     autoComplete="email"
                     type='email'
+                    placeholder='example@email.com'
                   />
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
-                    value={user.dataNascimento} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                    value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                     required
                     fullWidth
-                    id="date"
-                    label=""
-                    type="date"
+                    id="data"
+                    label="Data de Nascimento"
                     name="dataNascimento"
-                    autoComplete="date"
-
+                    autoComplete=""
+                    type='date'
+                    InputLabelProps={{
+                      shrink: true,
+                    }}
                   />
                 </Grid>
 
@@ -149,6 +184,7 @@ function Cadastrar() {
                     type="password"
                     id="senha"
                     autoComplete="new-password"
+                    placeholder='Minimo de 8 caracteres'
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -159,8 +195,9 @@ function Cadastrar() {
                     name="confirmarSenha"
                     label="Confirmar Senha"
                     type="password"
-                    id="senha"
+                    id="confirmarSenha"
                     autoComplete="new-password"
+                    placeholder='Minimo de 8 caracteres'
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -177,9 +214,12 @@ function Cadastrar() {
                   </FormControl>
                 </Grid>
                 <Grid item xs={12}>
+                  <Link to=''>
+                    <Typography>Termos e Condições de Uso</Typography>
+                  </Link>
                   <FormControlLabel
                     control={<Checkbox value="allowExtraEmails" color="primary" />}
-                    label="Eu aceito vender minha alma e concordo com os termos."
+                    label=" Eu li e aceito os termos e condições de usuário."
                   />
                 </Grid>
               </Grid>

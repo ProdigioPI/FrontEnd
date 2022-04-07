@@ -2,12 +2,11 @@ import React, {useState, useEffect, ChangeEvent} from 'react'
 import { Container, Typography, TextField, Button } from "@material-ui/core"
 import {useHistory, useParams } from 'react-router-dom'
 import './CadastrarCategorias.css';
-import useLocalStorage from 'react-use-localstorage';
 import Categoria from '../../../models/Categoria';
 import { buscaId, post, put } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { UserState } from '../../../store/tokens/keysRedux';
-
+import { toast } from 'react-toastify'
 
 function CadastrarCategorias() {
     let history = useHistory();
@@ -19,7 +18,16 @@ function CadastrarCategorias() {
 
     useEffect(() => {
         if (token == "") {
-            alert('Você não está logado')
+            toast.error("Você precisa estar logado", {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
             history.push("/login")
 
         }
@@ -65,9 +73,27 @@ function CadastrarCategorias() {
                         'Authorization': token
                     }
                 })
-                    alert('Categoria atualizado com sucesso');
+                toast.success('Categoria atualizado com sucesso', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
                 }catch(error){
-                    alert('Erro ao Atulizar!!');
+                    toast.error('Erro ao Atulizar!!', {
+                        position: "top-right",
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: false,
+                        pauseOnHover: false,
+                        draggable: false,
+                        theme: "colored",
+                        progress: undefined,
+                    });
                 }
             } else {
                 try{
@@ -76,10 +102,28 @@ function CadastrarCategorias() {
                         'Authorization': token
                     }
                 })
-                alert('Materia cadastrado com sucesso');
+                toast.success('Materia cadastrado com sucesso', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
                 }catch(error){
 
-                alert('Erro ao cadastrar Materia')
+                    toast.error('Erro ao cadastrar Materia', {
+                        position: "top-right",
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: false,
+                        pauseOnHover: false,
+                        draggable: false,
+                        theme: "colored",
+                        progress: undefined,
+                    });
 
                 }
             }
