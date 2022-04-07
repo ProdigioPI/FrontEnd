@@ -4,7 +4,6 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Box, Button, ButtonGroup, Grid, TextField } from '@mui/material';
 import { Link, useHistory } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
 import HomeIcon from '@material-ui/icons/Home';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem'
@@ -19,8 +18,6 @@ import TabProduto from '../../../produtos/tabprodutos/TabProduto';
 
 
 function NavBar() {
-
-
 
     return (
         <>

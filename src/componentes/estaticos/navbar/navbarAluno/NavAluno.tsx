@@ -4,7 +4,6 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Box, Button, ButtonGroup, Grid, TextField } from '@mui/material';
 import { Link, useHistory } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
 import HomeIcon from '@material-ui/icons/Home';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem'
@@ -16,6 +15,10 @@ import { Avatar, createStyles, makeStyles, Theme } from '@material-ui/core';
 
 import './NavAluno.css';
 import TabProduto from '../../../produtos/tabprodutos/TabProduto';
+import { addToken } from '../../../../store/tokens/action';
+import { UserState } from '../../../../store/tokens/keysRedux';
+import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 
 const useStyles1 = makeStyles((theme: Theme) =>
     createStyles({
@@ -38,7 +41,11 @@ function ImageAvatars() {
 
 function SimpleMenu() {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-    const [token, setToken] = useLocalStorage('token');
+    
+
+
+    const dispatch = useDispatch()
+ 
     let history = useHistory();
 
 
@@ -50,8 +57,17 @@ function SimpleMenu() {
         setAnchorEl(null);
     };
     function goLogout() {
-        setToken('')
-        alert("Usuario deslogado")
+        dispatch(addToken(''))
+        toast.info("Usuario deslogado", {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+        });
         history.push('/login')
     }
 
@@ -101,25 +117,30 @@ function SimpleMenu() {
 }
 function NavAluno() {
 
+    const token = useSelector<UserState, UserState["tokens"]>(
+        (state) => state.tokens
+    )
+    var navAluno
+    if(token != ''){
+         navAluno = <AppBar className="back-navbar" position="static">
+        <Toolbar className="end-navbar">
+         
+                <Link className='text-decorator-none button-home-nav' to='/home/A'>
+                    <Typography className='logo-navbar' variant="h5">
+                    <img src="https://imgur.com/UNNxFgo.png" />
+                    </Typography>
+                </Link >
 
+            <ImageAvatars />
+            <SimpleMenu />
+         
+        </Toolbar>
 
+    </AppBar>
+    }
     return (
         <>
-            <AppBar className="back-navbar" position="static">
-                <Toolbar className="end-navbar">
-                 
-                        <Link className='text-decorator-none button-home-nav' to='/home/A'>
-                            <Typography className='logo-navbar' variant="h5">
-                            <img src="https://imgur.com/UNNxFgo.png" />
-                            </Typography>
-                        </Link >
-
-                    <ImageAvatars />
-                    <SimpleMenu />
-                 
-                </Toolbar>
-
-            </AppBar>
+            {navAluno}
         </>
     )
 
