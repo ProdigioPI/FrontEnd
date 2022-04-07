@@ -143,7 +143,7 @@ const token = useSelector<UserState, UserState["tokens"]>(
         navProfessor =  <AppBar className="back-navbar" position="static">
         <Toolbar className="end-navbar">
 
-            <Link className='text-decorator-none button-home-nav' to='/home/P'>
+            <Link className='text-decorator-none button-home-nav' to='/home/professor'>
                 <Typography className='logo-navbar' variant="h5">
                     <img src="https://imgur.com/UNNxFgo.png" />
                 </Typography>

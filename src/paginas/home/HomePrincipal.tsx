@@ -28,7 +28,7 @@ function Home() {
         id: +id,    // Faz uma conversão de String para Number
         nome: '',
         usuario: '',
-        tipo: 'P',
+        tipo: '',
         senha: '',
         foto: '',
         dataNascimento:''
