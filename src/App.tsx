@@ -16,10 +16,14 @@ import DeletarCategoria from './componentes/categorias/deletarCategorias/Deletar
 import { Box } from '@material-ui/core';
 import NavAluno from './componentes/estaticos/navbar/navbarAluno/NavAluno';
 import NavProfessor from './componentes/estaticos/navbar/navbarprofessor/NavProfessor';
+import { Provider } from 'react-redux';
+import store from './store/store';
 
 
 function App() {
   return (
+    <Provider store={store} >
+      
     <Router>
 
       <Switch>
@@ -90,6 +94,7 @@ function App() {
       </Switch>
       <Footer />
     </Router>
+    </Provider>
   );
 
 }
