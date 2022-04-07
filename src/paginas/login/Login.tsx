@@ -25,6 +25,7 @@ function Login() {
             nome: '',
             usuario: '',
             senha: '',
+            tipo:'',
             foto: '',
             token: ''
 
@@ -37,6 +38,7 @@ function Login() {
         nome: '',
         usuario: '',
         senha: '',
+        tipo:'',
         token: '',
         foto: ""
     })

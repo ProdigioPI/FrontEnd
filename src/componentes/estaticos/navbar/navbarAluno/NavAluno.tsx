@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -19,6 +19,8 @@ import { addToken } from '../../../../store/tokens/action';
 import { UserState } from '../../../../store/tokens/keysRedux';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
+import { buscaId } from '../../../../services/Service';
+import Usuario from '../../../../models/Usuario';
 
 const useStyles1 = makeStyles((theme: Theme) =>
     createStyles({
@@ -31,10 +33,41 @@ const useStyles1 = makeStyles((theme: Theme) =>
 );
 function ImageAvatars() {
     const classes = useStyles1();
+    // Pega o ID guardado no Store
+    const id = useSelector<UserState, UserState["id"]>(
+        (state) => state.id
+    );
 
+    // Pega o Token guardado no Store
+    const token = useSelector<UserState, UserState["tokens"]>(
+        (state) => state.tokens
+    )
+
+    const [user, setUser] = useState<Usuario>({
+        id: +id,    // Faz uma conversão de String para Number
+        nome: '',
+        usuario: '',
+        tipo:'',
+        senha: '',
+        foto: '',
+        dataNascimento:''
+    })
+    async function findById(id: string) {
+        buscaId(`/usuarios/${id}`, setUser, {
+            headers: {
+                'Authorization': token
+            }
+        })
+    }
+
+    useEffect(() => {
+        if (id !== undefined) {
+            findById(id)
+        }
+    }, [id])
     return (
         <div className={classes.root}>
-            <Avatar alt="Perfil" src='https://socientifica.com.br/wp-content/uploads/2017/03/albert-einstein-scaled.jpg' />
+            <Avatar alt="Perfil" src={user.foto} />
         </div>
     );
 }
@@ -83,21 +116,21 @@ function SimpleMenu() {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
             >
-                <MenuItem onClick={handleClose}><Link className='text-decorator-none' to='/posts'>
+                <MenuItem onClick={handleClose}><Link className='text-decorator-none' to='/home/aluno'>
                     <Typography className='font-menu-navbar icon-nav' variant="h5" >
                         Agenda
                     </Typography>
                 </Link>
                 </MenuItem>
                 <MenuItem onClick={handleClose}>
-                    <Link className='text-decorator-none' to='/tema'>
+                    <Link className='text-decorator-none' to='/home/aluno'>
                         <Typography className='font-menu-navbar icon-nav' variant="h5" >
                            Professores
                         </Typography>
                     </Link>
                 </MenuItem>
                 <MenuItem onClick={handleClose}>
-                    <Link className='text-decorator-none' to='/formularioTema'>
+                    <Link className='text-decorator-none' to='/home/aluno'>
                         <Typography className='font-menu-navbar icon-nav' variant="h5" >
                             Configurações
                         </Typography>
@@ -125,7 +158,7 @@ function NavAluno() {
          navAluno = <AppBar className="back-navbar" position="static">
         <Toolbar className="end-navbar">
          
-                <Link className='text-decorator-none button-home-nav' to='/home/A'>
+                <Link className='text-decorator-none button-home-nav' to='/home/aluno'>
                     <Typography className='logo-navbar' variant="h5">
                     <img src="https://imgur.com/UNNxFgo.png" />
                     </Typography>

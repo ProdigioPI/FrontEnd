@@ -133,6 +133,19 @@ function Cadastrar() {
             <Box component="form" noValidate onSubmit={onSubmit} sx={{ mt: 3 }}>
               <Grid container spacing={2}>
                 <Grid item xs={12}>
+
+                  <TextField
+                    value={user.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                    name="foto"
+                    fullWidth
+                    id="foto"
+                    label="Link Foto"
+                    autoFocus
+                    required
+                  />
+                </Grid>
+                <Grid item xs={12}>
+
                   <TextField
                     value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                     autoComplete="given-name"
@@ -150,9 +163,9 @@ function Cadastrar() {
                     value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                     required
                     fullWidth
-                    id="email"
+                    id="usuario"
                     label="Digite seu Email"
-                    name="email"
+                    name="usuario"
                     autoComplete="email"
                     type='email'
                     placeholder='example@email.com'
@@ -160,10 +173,10 @@ function Cadastrar() {
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
-                    value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                    value={user.dataNascimento} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                     required
                     fullWidth
-                    id="data"
+                    id="dataNascimento"
                     label="Data de Nascimento"
                     name="dataNascimento"
                     autoComplete=""
