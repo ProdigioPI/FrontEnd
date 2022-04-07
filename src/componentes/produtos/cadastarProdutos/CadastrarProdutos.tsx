@@ -6,16 +6,21 @@ import Categoria from '../../../models/Categoria';
 import useLocalStorage from 'react-use-localstorage';
 import Produto from '../../../models/Produto';
 import { busca, buscaId, post, put } from '../../../services/Service';
+import { useSelector } from 'react-redux';
+import { UserState } from '../../../store/tokens/keysRedux';
 
 function CadastrarProdutos() {
     let history = useHistory();
     const { id } = useParams<{ id: string }>();
     const [categorias, setCategorias] = useState<Categoria[]>([])
-    const [token, setToken] = useLocalStorage('token');
+    const token = useSelector<UserState, UserState["tokens"]>(
+        (state) => state.tokens
+    )
+
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+            alert('Você não está logado')
             history.push("/login")
 
         }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -16,6 +16,9 @@ import { Avatar, createStyles, makeStyles, Theme } from '@material-ui/core';
 
 import './NavProfessor.css';
 import TabProduto from '../../../produtos/tabprodutos/TabProduto';
+import { useDispatch, useSelector } from 'react-redux';
+import { UserState } from '../../../../store/tokens/keysRedux';
+import { addToken } from '../../../../store/tokens/action';
 
 const useStyles1 = makeStyles((theme: Theme) =>
     createStyles({
@@ -27,8 +30,11 @@ const useStyles1 = makeStyles((theme: Theme) =>
     }),
 );
 
+
+
 function ImageAvatars() {
     const classes = useStyles1();
+   
 
     return (
         <div className={classes.root}>
@@ -39,10 +45,11 @@ function ImageAvatars() {
 
 function SimpleMenu() {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-    const [token, setToken] = useLocalStorage('token');
+   
+
     let history = useHistory();
 
-
+    const dispatch = useDispatch()
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         setAnchorEl(event.currentTarget);
     };
@@ -51,8 +58,7 @@ function SimpleMenu() {
         setAnchorEl(null);
     };
     function goLogout() {
-        setToken('')
-        alert("Usuario deslogado")
+        dispatch(addToken(''))
         history.push('/login')
     }
 
@@ -117,28 +123,35 @@ function SimpleMenu() {
     );
 }
 function NavProfessor() {
+    
+const token = useSelector<UserState, UserState["tokens"]>(
+    (state) => state.tokens
+)
+    var navProfessor
+    if(token != ''){
+        navProfessor =  <AppBar className="back-navbar" position="static">
+        <Toolbar className="end-navbar">
 
+            <Link className='text-decorator-none button-home-nav' to='/home/P'>
+                <Typography className='logo-navbar' variant="h5">
+                    <img src="https://imgur.com/UNNxFgo.png" />
+                </Typography>
+            </Link >
 
+            <ImageAvatars />
+            <SimpleMenu />
+
+        </Toolbar>
+
+    </AppBar>
+    }
 
     return (
         <>
-            <AppBar className="back-navbar" position="static">
-                <Toolbar className="end-navbar">
-
-                    <Link className='text-decorator-none button-home-nav' to='/home/P'>
-                        <Typography className='logo-navbar' variant="h5">
-                            <img src="https://imgur.com/UNNxFgo.png" />
-                        </Typography>
-                    </Link >
-
-                    <ImageAvatars />
-                    <SimpleMenu />
-
-                </Toolbar>
-
-            </AppBar>
+           {navProfessor}
         </>
     )
 
 }
 export default NavProfessor;
+

@@ -3,51 +3,78 @@ import { Link, useHistory } from 'react-router-dom'
 import React, { useEffect, useState, ChangeEvent } from 'react'
 import useLocalStorage from "react-use-localstorage";
 import UserLogin from '../../models/UsuarioLogin';
-import { login } from '../../services/Service';
+import { buscaId, login } from '../../services/Service';
 
 import './Login.css'
+import { useDispatch } from 'react-redux';
+import { addId, addToken } from '../../store/tokens/action';
+import { UserState } from '../../store/tokens/keysRedux';
+import UsuarioLogin from '../../models/UsuarioLogin';
+
 
 
 function Login() {
-
-
+    
     let history = useHistory();
-    //const { tipo } = useParams<{ tipo: string }>();
-    const [token, setToken] = useLocalStorage('token');
-    const [userLogin, setUserLogin]  = useState<UserLogin>({
+    const dispatch = useDispatch();
+
+    const [token, setToken] = useState('') // Criando configuração para usa o redux
+    const [userLogin, setUserLogin] = useState<UsuarioLogin>(
+        {
+            id: 0,
+            nome: '',
+            usuario: '',
+            senha: '',
+            foto: '',
+            token: ''
+
+        }
+    )
+    // State para pegar os dados retornados a API
+
+    const [respUserLogin, setRespUserLogin] = useState<UsuarioLogin>({
         id: 0,
+        nome: '',
         usuario: '',
         senha: '',
-        token: ''
+        token: '',
+        foto: ""
     })
+    function updatedModel(e: ChangeEvent<HTMLInputElement>) {
 
-    function updatedModel(e: ChangeEvent<HTMLInputElement>){
         setUserLogin({
             ...userLogin,
             [e.target.name]: e.target.value
         })
     }
 
-    useEffect(()=>{
-        if(token != ''){
-            history.push(`/home/${'P'}`) //VERIFICAR COMO SERÃO PUXADOS OS PRODUTOS E HOME
+    useEffect(() => {
+        if (token != '') {
+            dispatch(addToken(token))
+            history.push('/home')
         }
     }, [token])
 
-    // useEffect(()=>{
-    //     if(tipo === 'A'){
-    //     history.push(`/home/${tipo}`, cadastroUsuario)
-    // }
-    // if(tipo === 'P'){
-    //     history.push(`/home/${tipo}`, cadastroUsuario)
-    // }
-    // }, [token])
+    useEffect(() => {
+        if (respUserLogin.token !== "") {
+
+            // Verifica os dados pelo console (Opcional)
+            console.log("Token: " + respUserLogin.token)
+            console.log("ID: " + respUserLogin.id)
+            
+
+            // Guarda as informações dentro do Redux (Store)
+            dispatch(addToken(respUserLogin.token))
+            dispatch(addId(respUserLogin.id.toString()))    // Faz uma conversão de Number para String
+            history.push('/home')
+        }
+    }, [respUserLogin.token])
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault();
 
         try {
-            await login(`/usuarios/logar`, userLogin, setToken)
+            await login(`/usuarios/logar`, userLogin, setRespUserLogin)
 
             alert('Usuario logado com sucesso!');
 

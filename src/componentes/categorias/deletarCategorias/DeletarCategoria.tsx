@@ -5,21 +5,27 @@ import { useHistory, useParams } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import { buscaId, deleteId } from '../../../services/Service';
 import Categoria from '../../../models/Categoria';
+import { useSelector } from 'react-redux';
+import { UserState } from '../../../store/tokens/keysRedux';
 
 
 function DeletarCategoria() {
     let history = useHistory();
     const { id } = useParams<{id: string}>();
-    const [token, setToken] = useLocalStorage('token');
+    const token = useSelector<UserState, UserState["tokens"]>(
+      (state) => state.tokens
+  )
+
+
+  useEffect(() => {
+      if (token == "") {
+          alert('Você não está logado')
+          history.push("/login")
+
+      }
+  }, [token])
     const [categoria, setCategoria] = useState<Categoria>()
 
-    useEffect(() => {
-        if (token == "") {
-            alert("Você precisa estar logado")
-            history.push("/login")
-    
-        }
-    }, [token])
 
     useEffect(() =>{
         if(id !== undefined){

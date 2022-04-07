@@ -6,16 +6,23 @@ import { Box, Card, CardActions, CardContent, Button, Typography } from '@materi
 import './ListaProdutos.css';
 import useLocalStorage from 'react-use-localstorage';
 import { useHistory } from 'react-router-dom'
+import { useSelector } from 'react-redux';
+import { UserState } from '../../../store/tokens/keysRedux';
 
 function ListaProdutos() {
+
+    const history = useHistory()
     const [produto, setProdutos] = useState<Produto[]>([])
-    const [token, setToken] = useLocalStorage('token');
-    let history = useHistory();
+    const token = useSelector<UserState, UserState["tokens"]>(
+        (state) => state.tokens
+    )
+
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+            alert('Você não está logado')
             history.push("/login")
+
         }
     }, [token])
 

@@ -4,12 +4,14 @@ import {Action} from './action';
 // e adicione o campo ID
 export interface UserState{
     tokens: string,
-    id: string
+    id: string,
+
 }
 
 const initialState = {
     tokens: "" ,
     id: ""
+
 }
 
 export const userReducer = (state: UserState = initialState, action: Action) =>{
@@ -22,7 +24,7 @@ export const userReducer = (state: UserState = initialState, action: Action) =>{
                 e o id com a informação inicial dele
                 token => jasdjklasjdkal and id = ' '(valor initial)    
             */
-            return {tokens: action.payload, id: state.id } // 
+            return {tokens: action.payload, id: state.id} // 
         }
 
         case "ADD_ID":{
@@ -36,7 +38,7 @@ export const userReducer = (state: UserState = initialState, action: Action) =>{
             */            
             return{id: action.payload, tokens: state.tokens}
         }
-
+    
         default:
             return state
     }

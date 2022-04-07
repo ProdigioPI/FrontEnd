@@ -1,5 +1,5 @@
 // Altere o tipo da Ação usando o Operador OR(|)
-export type Action =  {type: "ADD_TOKEN"|"ADD_ID"; payload: string}
+export type Action =  {type:string; payload: string}
 
 export const addToken = (token: string): Action =>({
     type:"ADD_TOKEN",
@@ -10,5 +10,11 @@ export const addToken = (token: string): Action =>({
 export const addId = (id:string): Action =>({
     type:"ADD_ID",
     payload: id
+    
+})
+
+export const addTipo = (tipo:string): Action =>({
+    type:"ADD_TIPO",
+    payload: tipo
     
 })

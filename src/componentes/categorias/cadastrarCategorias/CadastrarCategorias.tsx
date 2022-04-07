@@ -5,25 +5,30 @@ import './CadastrarCategorias.css';
 import useLocalStorage from 'react-use-localstorage';
 import Categoria from '../../../models/Categoria';
 import { buscaId, post, put } from '../../../services/Service';
+import { useSelector } from 'react-redux';
+import { UserState } from '../../../store/tokens/keysRedux';
 
 
 function CadastrarCategorias() {
     let history = useHistory();
     const { id } = useParams<{id: string}>();
-    const [token, setToken] = useLocalStorage('token');
+    const token = useSelector<UserState, UserState["tokens"]>(
+        (state) => state.tokens
+    )
+
+
+    useEffect(() => {
+        if (token == "") {
+            alert('Você não está logado')
+            history.push("/login")
+
+        }
+    }, [token])
     const [categoria, setCategoria] = useState<Categoria>({
         id: 0,
         materia: '',
         areaDeEstudo: ''
     })
-
-    useEffect(() => {
-        if (token == "") {
-            alert("Você precisa estar logado")
-            history.push("/login")
-    
-        }
-    }, [token])
 
     useEffect(() =>{
         if(id !== undefined){
