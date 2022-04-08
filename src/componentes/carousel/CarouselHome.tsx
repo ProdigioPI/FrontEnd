@@ -7,8 +7,8 @@ import './CarouselHome.css'
 function CarouselHome(){
 
     var items = [
-        { img: "https://cdn.discordapp.com/attachments/946051833481285672/962024602962370650/telasProdigio-03.png" },
-        { img: "https://cdn.discordapp.com/attachments/946051833481285672/962024603448918096/telasProdigio-04.png" }
+        { img: "https://cdn.discordapp.com/attachments/946058214108180481/962061499671670864/1547-03.jpg" },
+        { img: "https://cdn.discordapp.com/attachments/946058214108180481/962061500086878249/1547-04.jpg" }
     ]
 
 

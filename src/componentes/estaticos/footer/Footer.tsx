@@ -65,7 +65,7 @@ function Footer(){
                                 <a href="#!">Contato</a>
                             </li>
                             <li className="list-unstyled">
-                                <a href="#!">Localização</a>
+                                <a href="https://www.google.com/maps/@-23.5563475,-46.6624153,3a,82.2y,254.92h,94.93t/data=!3m6!1e1!3m4!1s7u_celO9m1h9hNP9MgUXOA!2e0!7i16384!8i8192">Localização</a>
                             </li>
                             <li className="list-unstyled">
                                 <a href="#!">Parceiros</a>
