@@ -53,11 +53,11 @@ function ListaProdutos() {
         <>
             {
                 produto.map(produto => (
-                    <Box m={2} >
+                    <Box m={2} className='base-produto'>
                         <Card variant="outlined">
                             <CardContent>
                                 <Typography color="textSecondary" gutterBottom>
-                                    Postagens
+                                    Aula:
                                 </Typography>
                                 <Typography variant="h5" component="h2">
                                     {produto.nomeMateria}

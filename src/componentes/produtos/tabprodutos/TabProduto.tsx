@@ -164,13 +164,13 @@ function TabProduto() {
             
       
           </Box>
-          <Box display="flex" flexGrow='Grow' >
+          <Box display='flex' flexWrap='wrap' >
           {produtoslista}
             {/* <ListaProduto /> */}
           </Box>
         </TabPanel>
         <TabPanel value="2">
-        <Box display="flex" flexGrow='Grow' >
+        <Box display='flex' flexWrap='wrap' >
           {produtoslista}
             {/* <ListaProduto /> */}
           </Box>
@@ -178,42 +178,42 @@ function TabProduto() {
         </TabPanel>
         <TabPanel value="3">
           {/* <Sobre/> */}
-          <Box display="flex" flexGrow='Grow' >
+          <Box display='flex' flexWrap='wrap' >
           {produtoslista}
             {/* <ListaProduto /> */}
           </Box>
         </TabPanel>
         <TabPanel value="4">
           {/* <Sobre/> */}
-          <Box display="flex" flexGrow='Grow' >
+          <Box display='flex' flexWrap='wrap' >
           {produtoslista}
             {/* <ListaProduto /> */}
           </Box>
         </TabPanel>
         <TabPanel value="5">
           {/* <Sobre/> */}
-          <Box display="flex" flexGrow='Grow' >
+          <Box display='flex' flexWrap='wrap' >
           {produtoslista}
             {/* <ListaProduto /> */}
           </Box>
         </TabPanel>
         <TabPanel value="6">
           {/* <Sobre/> */}
-          <Box display="flex" flexGrow='Grow' >
+          <Box display='flex' flexWrap='wrap' >
           {produtoslista}
             {/* <ListaProduto /> */}
           </Box>
         </TabPanel>
         <TabPanel value="7">
           {/* <Sobre/> */}
-          <Box display="flex" flexGrow='Grow' >
+          <Box display='flex' flexWrap='wrap' >
           {produtoslista}
             {/* <ListaProduto /> */}
           </Box>
         </TabPanel>
         <TabPanel value="8">
           {/* <Sobre/> */}
-          <Box display="flex" flexGrow='Grow' >
+          <Box display='flex' flexWrap='wrap' >
           {produtoslista}
             {/* <ListaProduto /> */}
           </Box>
