@@ -10,6 +10,7 @@ import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { UserState } from '../../../store/tokens/keysRedux';
 import { toast } from 'react-toastify';
+import CadastrarProdutos from '../../../componentes/produtos/cadastarProdutos/CadastrarProdutos';
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -58,7 +59,7 @@ export default function CenteredGrid() {
 
                     <Grid item xs={12}>
                         <CarouselHome />
-                    </Grid>
+                    </Grid> 
 
                 </Grid>
             </Grid>
@@ -66,7 +67,7 @@ export default function CenteredGrid() {
 
             <Grid container>
                 <Grid item xs={12} className="grid">
-
+                    < CadastrarProdutos />
                 </Grid>
 
                 <Grid item xs={12}>
