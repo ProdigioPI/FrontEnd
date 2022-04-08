@@ -65,7 +65,7 @@ function App() {
             </Route>
             <Route path='/produtos' >
               <NavProfessor />
-              <Box display='flex' flexGrow='grow'>
+              <Box display='flex' flexWrap='wrap'>
                 <ListaProdutos />
               </Box>
             </Route>

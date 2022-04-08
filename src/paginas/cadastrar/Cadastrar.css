@@ -1,20 +1,80 @@
 
-.style-cadastro{
-    padding-bottom: 100px;
-}
 .cadastro-title{
     color: #151d24 !important;
     font-weight: bold !important;
 }
+
+.form-title{
+    font-size: 35px !important;
+}
+
+.form-base{
+    width: 400px;
+}
+.back-cadastrar .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input{
+    padding: 14px !important;
+}
+
+.back-cadastrar{
+    background-image: url("https://cdn.discordapp.com/attachments/946051833481285672/962001207403098112/telasProdigio_telaCadastro.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 90.6vh;
+}
+
+.card-cadastro{
+    background: #fff!important;
+    height: 80vh!important;
+    padding-top: 25px;
+}
+
+.form-tipo .MuiFormGroup-root {
+    display: flex;
+    flex-wrap: wrap !important;
+    flex-direction: row !important;
+}
+
+
+
+#link-termo{
+    text-decoration: none !important;
+    color: #151d24;
+}
+#link-termo:hover{
+    text-decoration: underline !important;
+    color: #2d3f4e;
+}
+.MuiRadio-colorSecondary.Mui-checked{
+    color: #151d24 !important;
+} 
+
 .botao-cadastrar{
+    background-color: #2d3f4e !important;
+    color: #fff !important;
+    font-weight: bold !important;
+    border-radius: 5px !important;
+    padding: 5px !important;
+    margin: 1px;
+}
+.botao-voltar{
+    background-color: #2d3f4e !important;
+    color: #fff !important;
+    font-weight: bold !important;
+    border-radius: 5px !important;
+    padding: 5px !important;
+    margin: 1px;
+}
+
+.caixa-termos{
+    margin-left: 1px !important;
+}
+
+.botao-cadastrar:hover{
     color: #ffffff !important;
     background-color: #151d24 !important;
-    font-weight: bold !important;
-    padding: 5% !important;
-    margin-top: 15px !important;
-    border-radius: 10% !important;
 }
-.botao-cadastrar:hover{
-    background-color: #ffffff !important;
-    color: #151d24 !important;
+.botao-voltar:hover{
+    color: #ffffff !important;
+    background-color: #151d24 !important;
 }

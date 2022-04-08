@@ -14,7 +14,7 @@ import { toast } from 'react-toastify';
 
 
 function Login() {
-    
+
     let history = useHistory();
     const dispatch = useDispatch();
 
@@ -25,7 +25,7 @@ function Login() {
             nome: '',
             usuario: '',
             senha: '',
-            tipo:'',
+            tipo: '',
             foto: '',
             token: ''
 
@@ -38,7 +38,7 @@ function Login() {
         nome: '',
         usuario: '',
         senha: '',
-        tipo:'',
+        tipo: '',
         token: '',
         foto: ""
     })
@@ -63,7 +63,7 @@ function Login() {
             // Verifica os dados pelo console (Opcional)
             console.log("Token: " + respUserLogin.token)
             console.log("ID: " + respUserLogin.id)
-            
+
 
             // Guarda as informações dentro do Redux (Store)
             dispatch(addToken(respUserLogin.token))
@@ -90,7 +90,7 @@ function Login() {
             });
 
         }
-        catch(error){
+        catch (error) {
             toast.error('Dados inconscientes. Erro ao logar!', {
                 position: "top-right",
                 autoClose: 2000,
@@ -104,17 +104,17 @@ function Login() {
         }
     }
     return (
-        <Grid container className="background">
+        <Grid container className='back-login'>
             <Grid item xs={12}>
 
-                <Box display="flex" justifyContent="center" alignItems="center" height="80vh">
-                    <Box className="card" width={440} height="75vh" borderRadius={5}
-                        marginTop={12} display="flex" justifyContent="center" alignItems="center">
-                        <Box marginTop={4}>
+                <Box display="flex" marginLeft={20} justifyContent="left" alignItems="center">
+                    <Box className="card" width={440} borderRadius={10}
+                        marginTop={25} display="flex" justifyContent="center" alignItems="center">
+                        <Box marginTop={6}>
                             <Typography className='form-title' variant="h4" align="center">
                                 Login
                             </Typography>
-                
+
                             <form onSubmit={onSubmit} className='form'>
                                 <Box marginY={4}>
                                     <TextField value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} className='form-input' name='usuario' id="standard-basic" type="email" label="Email" required />
@@ -124,14 +124,14 @@ function Login() {
                                     <TextField value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} className='form-input' name='senha' id="standard-basic" type="password" label="Senha" required />
                                 </Box>
                                 <Box marginTop={2} textAlign='center'>
-                                        <Button  type="submit" variant="contained" className="botao">
-                                            Login
-                                        </Button>
+                                    <Button type="submit" variant="contained" className="botao">
+                                        Login
+                                    </Button>
                                 </Box>
-                                
+
 
                                 <Box marginTop={2} marginBottom={2} textAlign='center'>
-                                    <Typography className='form-title' variant="h6" color="inherit">
+                                    <Typography className='form-conta' color="inherit">
                                         Você já tem sua conta?
                                     </Typography>
                                     <Link to='/cadastro' className='text-decorator-none'>

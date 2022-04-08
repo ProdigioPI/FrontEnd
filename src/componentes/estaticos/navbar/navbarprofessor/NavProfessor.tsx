@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -20,6 +20,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { UserState } from '../../../../store/tokens/keysRedux';
 import { addToken } from '../../../../store/tokens/action';
 import { toast } from 'react-toastify';
+import Usuario from '../../../../models/Usuario';
+import { buscaId } from '../../../../services/Service';
 
 const useStyles1 = makeStyles((theme: Theme) =>
     createStyles({
@@ -35,11 +37,41 @@ const useStyles1 = makeStyles((theme: Theme) =>
 
 function ImageAvatars() {
     const classes = useStyles1();
-   
+    // Pega o ID guardado no Store
+    const id = useSelector<UserState, UserState["id"]>(
+        (state) => state.id
+    );
 
+    // Pega o Token guardado no Store
+    const token = useSelector<UserState, UserState["tokens"]>(
+        (state) => state.tokens
+    )
+
+    const [user, setUser] = useState<Usuario>({
+        id: +id,    // Faz uma conversão de String para Number
+        nome: '',
+        usuario: '',
+        tipo:'',
+        senha: '',
+        foto: '',
+        dataNascimento:''
+    })
+    async function findById(id: string) {
+        buscaId(`/usuarios/${id}`, setUser, {
+            headers: {
+                'Authorization': token
+            }
+        })
+    }
+
+    useEffect(() => {
+        if (id !== undefined) {
+            findById(id)
+        }
+    }, [id])
     return (
         <div className={classes.root}>
-            <Avatar alt="Perfil" src='https://socientifica.com.br/wp-content/uploads/2017/03/albert-einstein-scaled.jpg' />
+            <Avatar alt="Perfil" src={user.foto} />
         </div>
     );
 }

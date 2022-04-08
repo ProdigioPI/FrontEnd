@@ -10,7 +10,10 @@ import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { UserState } from '../../../store/tokens/keysRedux';
 import { toast } from 'react-toastify';
-
+import CadastrarProdutos from '../../../componentes/produtos/cadastarProdutos/CadastrarProdutos';
+import './HomeProfessor.css'
+import ListaProdutos from '../../../componentes/produtos/listaProdutos/ListaProdutos';
+import { Box, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -58,19 +61,15 @@ export default function CenteredGrid() {
 
                     <Grid item xs={12}>
                         <CarouselHome />
-                    </Grid>
+                    </Grid> 
 
                 </Grid>
             </Grid>
 
 
-            <Grid container>
-                <Grid item xs={12} className="grid">
-
-                </Grid>
-
-                <Grid item xs={12}>
-                    <Paper className={classes.paper}>xs=12</Paper>
+            <Grid container className="grid-base">
+                <Grid container item xs={12} className="grid-container">
+                    <img src="https://cdn.discordapp.com/attachments/946051833481285672/962057611245658113/telasProdigio-07.png" />
                 </Grid>
 
             </Grid>

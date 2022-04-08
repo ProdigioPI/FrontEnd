@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme: Theme) =>
     container: {
       display: 'flex',
       flexWrap: 'wrap',
+      
     },
     textField: {
       marginLeft: theme.spacing(1),
@@ -114,144 +115,141 @@ function Cadastrar() {
   //Estrutura do select
 
   return (
-    <Grid className='style-cadastro' xs={12} >
+    <Grid container className='back-cadastrar'>
       <ThemeProvider theme={theme}>
-        <Container component="main" maxWidth="xs">
-          <Box
-            sx={{
-              marginTop: 8,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-            }}
-          >
-            {/* <form onSubmit={onSubmit}> */}
+        <Grid item xs={12}>
 
-            <Typography className='cadastro-title' component="h1" variant="h5">
-              Cadastro
-            </Typography>
-            <Box component="form" noValidate onSubmit={onSubmit} sx={{ mt: 3 }}>
-              <Grid container spacing={2}>
-                <Grid item xs={12}>
+          <Box display="flex"  marginRight={20} justifyContent="right" alignItems="center" >
+            <Box className="card-cadastro" width={550} borderRadius={5}
+              marginTop={4}  display="flex" justifyContent="center" alignItems="top">
+              <Box>
+                <Typography className='form-title' align="center">
+                  Cadastre-se
+                </Typography> 
 
-                  <TextField
-                    value={user.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-                    name="foto"
-                    fullWidth
-                    id="foto"
-                    label="Link Foto"
-                    autoFocus
-                    required
-                  />
-                </Grid>
-                <Grid item xs={12}>
+                <form onSubmit={onSubmit} className='form-base'>
+      
+                  <Box marginY={2}>
+                    <TextField
+                      value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                      autoComplete="given-name"
+                      name="nome"
+                      fullWidth
+                      id="nome"
+                      label="Nome Completo"
+                      autoFocus
+                      required />
+                  </Box>
 
-                  <TextField
-                    value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-                    autoComplete="given-name"
-                    name="nome"
-                    fullWidth
-                    id="nome"
-                    label="Nome Completo"
-                    autoFocus
-                    required
-                  />
-                </Grid>
+                  <Box marginY={3}>
+                    <TextField
+                      value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                      required
+                      fullWidth
+                      id="usuario"
+                      label="Digite seu Email"
+                      name="usuario"
+                      autoComplete="email"
+                      type='email'
+                      placeholder='example@email.com' />
+                  </Box>
 
-                <Grid item xs={12}>
-                  <TextField
-                    value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-                    required
-                    fullWidth
-                    id="usuario"
-                    label="Digite seu Email"
-                    name="usuario"
-                    autoComplete="email"
-                    type='email'
-                    placeholder='example@email.com'
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField
-                    value={user.dataNascimento} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-                    required
-                    fullWidth
-                    id="dataNascimento"
-                    label="Data de Nascimento"
-                    name="dataNascimento"
-                    autoComplete=""
-                    type='date'
-                    InputLabelProps={{
-                      shrink: true,
-                    }}
-                  />
-                </Grid>
+                  <Box marginY={3}>
+                    <TextField
+                      value={user.dataNascimento} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                      required
+                      fullWidth
+                      id="dataNascimento"
+                      label="Data de Nascimento"
+                      name="dataNascimento"
+                      autoComplete=""
+                      type='date'
+                      InputLabelProps={{ shrink: true, }}/>
+                  </Box>
 
-                <Grid item xs={12}>
-                  <TextField
-                    value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-                    required
-                    fullWidth
-                    name="senha"
-                    label="Digite sua senha"
-                    type="password"
-                    id="senha"
-                    autoComplete="new-password"
-                    placeholder='Minimo de 8 caracteres'
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField
-                    value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)}
-                    required
-                    fullWidth
-                    name="confirmarSenha"
-                    label="Confirmar Senha"
-                    type="password"
-                    id="confirmarSenha"
-                    autoComplete="new-password"
-                    placeholder='Minimo de 8 caracteres'
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <FormControl>
-                    <FormLabel id="demo-radio-buttons-group-label">TIPO DE CONTA:</FormLabel>
-                    <RadioGroup
-                      aria-labelledby="demo-radio-buttons-group-label"
-                      defaultValue="tipo"
-                      name="tipo"
-                      onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}>
-                      <FormControlLabel value="A" control={<Radio />} label="Aluno" />
-                      <FormControlLabel value="P" control={<Radio />} label="Professor" />
-                    </RadioGroup>
-                  </FormControl>
-                </Grid>
-                <Grid item xs={12}>
-                  <Link to=''>
-                    <Typography>Termos e Condições de Uso</Typography>
+                  <Box marginY={3}>
+                    <TextField
+                      value={user.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                      name="foto"
+                      fullWidth
+                      id="foto"
+                      label="Link Foto"
+                      autoFocus
+                      required />
+                  </Box>
+
+                  <Box marginY={3}>
+                    <TextField
+                      value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                      required
+                      fullWidth
+                      name="senha"
+                      label="Digite sua senha"
+                      type="password"
+                      id="senha"
+                      autoComplete="new-password"
+                      placeholder='Minimo de 8 caracteres' />
+                  </Box>
+
+                  <Box marginY={3}>
+                    <TextField
+                      value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)}
+                      required
+                      fullWidth
+                      name="confirmarSenha"
+                      label="Confirmar Senha"
+                      type="password"
+                      id="confirmarSenha"
+                      autoComplete="new-password"
+                      placeholder='Minimo de 8 caracteres'/>
+                  </Box>
+
+                  <Box marginY={2} textAlign='center' display="flex" justifyContent="center" alignItems="center">
+                    <FormControl className='form-tipo'>
+                      <FormLabel id="demo-radio-buttons-group-label">TIPO DE CONTA:</FormLabel>
+                      <RadioGroup
+                        aria-labelledby="demo-radio-buttons-group-label" defaultValue="tipo" name="tipo"
+                        onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}>
+                        <FormControlLabel value="A" control={<Radio />} label="Aluno" />
+                        <FormControlLabel value="P" control={<Radio />} label="Professor" />
+                      </RadioGroup>
+                    </FormControl>
+                  </Box>
+
+                  <Box marginY={1} textAlign='center'>
+                    <a href='https://drive.google.com/file/d/1VTt0NvYa2JbRKMeIzGRL6fUyz7kDhKCg/view?usp=sharing' id="link-termo">
+                      <Typography>Termos e Condições de Uso</Typography>
+                    </a>
+                    <FormControlLabel className='caixa-termos'
+                      control={<Checkbox value="allowExtraEmails" color="primary" />}
+                      label=" Eu li e aceito os termos e condições de uso."/>
+                  </Box>
+
+                  <Box marginTop={2} textAlign='center'>
+                    <Button className='botao-cadastrar'
+                      type="submit"
+                      fullWidth variant="contained" 
+                      sx={{ mt: 3, mb: 2 }} >
+                      Cadastrar
+                    </Button>
+                  </Box>
+                  <Box marginTop={1} textAlign='center'>
+                  <Link to='/login' className='text-decorator-none'>
+                  <Button className='botao-voltar'
+                      type="submit"
+                      fullWidth variant="contained" 
+                      sx={{ mt: 3, mb: 2 }} >
+                      Voltar
+                    </Button>
                   </Link>
-                  <FormControlLabel
-                    control={<Checkbox value="allowExtraEmails" color="primary" />}
-                    label=" Eu li e aceito os termos e condições de usuário."
-                  />
-                </Grid>
-              </Grid>
-              <Button className='botao-cadastrar'
-                type="submit"
-                fullWidth
-                variant="contained"
-                sx={{ mt: 3, mb: 2 }}
-              >
-                Cadastrar
-              </Button>
-              <Grid container justifyContent="flex-end">
-              </Grid>
+                  </Box>
+
+                </form>
+
+              </Box>
             </Box>
-
-            {/* </form> */}
           </Box>
-
-        </Container>
+        </Grid>
       </ThemeProvider>
     </Grid>
   );
