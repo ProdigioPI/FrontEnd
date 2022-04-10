@@ -45,7 +45,7 @@ function TabProduto() {
     setValue(newValue);
   }
 
-  async function getProduto(materia:string) {
+  async function getProduto(materia:number) {
    
     await busca(`/produto/materia/${materia}`, setProdutos, {
       headers: {
@@ -63,44 +63,48 @@ function TabProduto() {
     })
   }
   function getPortuguês(){
-    let materia = 'Portugues'
+    let materia = 1
     getProduto(materia)
   }
   function getGeografia(){
-    let materia = 'Geografia'
+    let materia = 4
     getProduto(materia)
   }
   function getHistoria(){
-    let materia = 'Historia'
+    let materia = 3
     getProduto(materia)
   }
   function getFisica(){
-    let materia = 'Fisica'
+    let materia = 7
     getProduto(materia)
   }
   function getQuimica(){
-    let materia = 'Quimica'
+    let materia = 6
     getProduto(materia)
   }
   function getBiologia(){
-    let materia = 'Biologia'
+    let materia = 5
     getProduto(materia)
   }
   function getMatematica(){
-    let materia = 'Matematica'
+    let materia = 2
     getProduto(materia)
   }
 
   useEffect(() => {
+    
   
   }, [produto.length])
 
   var produtoslista = produto.map(produto => (
-    <Box m={2} >
-        <Card variant="outlined">
+    <Box m={4} className='tab-back'>
+        <Card variant="outlined" className='tab-produto'>
             <CardContent>
                 <Typography color="textSecondary" gutterBottom>
-                    Postagens
+                    Produto
+                </Typography>
+                <Typography className='produto-img'>
+                  <img src={produto.foto}/>
                 </Typography>
                 <Typography variant="h5" component="h2">
                     {produto.nomeMateria}
@@ -123,14 +127,14 @@ function TabProduto() {
 
                     <Link to={`/home/aluno`} className="text-decorator-none" >
                         <Box mx={1}>
-                            <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                            <Button variant="contained" className="btn-compra" size='small' color="primary" >
                                 Comprar
                             </Button>
                         </Box>
                     </Link>
                     <Link to={`/home/aluno`} className="text-decorator-none" >
                         <Box mx={1}>
-                            <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                            <Button variant="contained" className="btn-compra" size='small' color="primary" >
                                 Carrinho
                             </Button>
                         </Box>

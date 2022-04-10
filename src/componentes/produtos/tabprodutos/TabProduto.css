@@ -2,6 +2,9 @@
     font-weight: bold;
     color: #ffffff;
  }
+ #mui-p-50276-P-8{
+   background: #bebebe90 !important;
+}
 
  .menu-tab{
     font-weight: bold !important;
@@ -17,5 +20,22 @@
 
  .back-produto{
     background:#2d3f4e !important;
+}
 
+.produto-img img{
+   width: 18vw;
+   height: 15vh;
+   border-radius: 2%;
+}
+.MuiCard-root.tab-produto{
+   width: 20vw !important;
+   height: 45vh !important;
+   box-shadow: 1px 1px 5px #2d3f4e !important
+}
+
+.btn-compra.MuiButton-containedPrimary{
+   background-color: #2d3f4e !important;
+}
+.btn-compra.MuiButton-containedPrimary:hover{
+   background-color: #151d24 !important;
 }

@@ -59,7 +59,7 @@ function App() {
             </Route>
             <Route path='/categorias'>
               <NavProfessor />
-              <Box display='flex' flexGrow='grow'>
+              <Box display='flex' flexWrap='wrap'>
                 <ListaCategorias />
               </Box>
             </Route>

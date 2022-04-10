@@ -52,10 +52,10 @@ function ListaCategorias() {
             {
                 categoria.map(categoria => (
                     <Box m={2} >
-                        <Card variant="outlined">
+                        <Card variant="outlined" className='lista-categoria'>
                             <CardContent>
                                 <Typography color="textSecondary" gutterBottom>
-                                    Materia
+                                    Matéria
                                 </Typography>
                                 <Typography variant="h5" component="h2">
                                     {categoria.materia}
@@ -69,14 +69,14 @@ function ListaCategorias() {
 
                                     <Link to={`/formularioCategoria/${categoria.id}`} className="text-decorator-none">
                                         <Box mx={1}>
-                                            <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                                            <Button variant="contained" className="btn-compra" size='small' color="primary" >
                                                 atualizar
                                             </Button>
                                         </Box>
                                     </Link>
                                     <Link to={`/deletarCategoria/${categoria.id}`} className="text-decorator-none">
                                         <Box mx={1}>
-                                            <Button variant="contained" size='small' color="secondary">
+                                            <Button variant="contained" className="btn-compra" size='small' color="primary">
                                                 deletar
                                             </Button>
                                         </Box>
