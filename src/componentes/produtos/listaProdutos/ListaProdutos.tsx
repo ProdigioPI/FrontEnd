@@ -52,42 +52,45 @@ function ListaProdutos() {
     return (
         <>
             {
-                produto.map(produto => (
-                    <Box m={2} className='base-produto'>
-                        <Card variant="outlined">
+                produto.map(produtos => (
+                    <Box m={2}>
+                        <Card variant="outlined" className='tab-produto'>
                             <CardContent>
                                 <Typography color="textSecondary" gutterBottom>
                                     Aula:
                                 </Typography>
+                                <Typography className='produto-img' gutterBottom>
+                                    <img src={produtos.foto} />
+                                </Typography>
                                 <Typography variant="h5" component="h2">
-                                    {produto.nomeMateria}
+                                    {produtos.nomeMateria}
                                 </Typography>
                                 <Typography variant="body2" component="p">
-                                    {produto.descricao}
+                                    {produtos.descricao}
                                 </Typography>                               
                                 <Typography variant="body2" component="p">
-                                    {produto.agenda}
+                                    {produtos.agenda}
                                 </Typography>
                                 <Typography variant="body2" component="p">
-                                    {produto.valor}
+                                    {produtos.valor}
                                 </Typography>
                                 <Typography variant="body2" component="p">
-                                    {produto.categoria?.materia}
+                                    {produtos.categoria?.materia}
                                 </Typography>
                             </CardContent>
                             <CardActions>
                                 <Box display="flex" justifyContent="center" mb={1.5}>
 
-                                    <Link to={`/formularioProduto/${produto.id}`} className="text-decorator-none" >
+                                    <Link to={`/formularioProduto/${produtos.id}`} className="text-decorator-none" >
                                         <Box mx={1}>
-                                            <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                                            <Button variant="contained" className="btn-compra" size='small' color="primary" >
                                                 atualizar
                                             </Button>
                                         </Box>
                                     </Link>
-                                    <Link to={`/deletarProduto/${produto.id}`} className="text-decorator-none">
+                                    <Link to={`/deletarProduto/${produtos.id}`} className="text-decorator-none">
                                         <Box mx={1}>
-                                            <Button variant="contained" size='small' color="secondary">
+                                            <Button variant="contained" className="btn-compra" size='small' color="primary">
                                                 deletar
                                             </Button>
                                         </Box>

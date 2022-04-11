@@ -48,7 +48,8 @@ function CadastrarProdutos() {
         descricao: '',
         agenda: '',
         valor: 0,
-        categoria: null
+        categoria: null,
+        foto: ''
     })
 
     useEffect(() => { 
@@ -164,7 +165,8 @@ function CadastrarProdutos() {
     return (
         <Container maxWidth="sm" className="topo">
             <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Cadastrar Aula</Typography>
+                <Typography variant="h3" color="textSecondary" component="h1" align="center" className='titulo-funcao'>Cadastrar Aula</Typography>
+                <TextField value={produto.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="foto" label="Foto da Aula" variant="outlined" name="foto" margin="normal" fullWidth />
                 <TextField value={produto.nomeMateria} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="nomeMateria" label="Assunto da Aula" variant="outlined" name="nomeMateria" margin="normal" fullWidth  required/>
                 <TextField value={produto.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="descricao" label="descricao" variant="outlined" name="descricao" margin="normal" fullWidth required/>
                 <TextField value={produto.agenda} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="agenda" label="agenda" variant="outlined" name="agenda" margin="normal" fullWidth />
@@ -187,7 +189,7 @@ function CadastrarProdutos() {
                         }
                     </Select>
                     <FormHelperText>Escolha uma categoria para o produto</FormHelperText>
-                    <Button type="submit" variant="contained" color="primary">
+                    <Button type="submit" variant="contained" className='btn-compra' color="primary">
                         Finalizar
                     </Button>
                 </FormControl>

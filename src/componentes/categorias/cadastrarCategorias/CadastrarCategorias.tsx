@@ -138,10 +138,10 @@ function CadastrarCategorias() {
     return (
         <Container maxWidth="sm" className="topo">
             <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Cadatrar Materia</Typography>
+                <Typography variant="h3" color="textSecondary" component="h1" align="center" className='titulo-funcao'>Cadatrar Materia</Typography>
                 <TextField value={categoria.materia} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedCategoria(e)} id="materia" label="materia" variant="outlined" name="materia" margin="normal" fullWidth />
                 <TextField value={categoria.areaDeEstudo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedCategoria(e)} id="areaDeEstudo" label="area de estudo" variant="outlined" name="areaDeEstudo" margin="normal" fullWidth />
-                <Button type="submit" variant="contained" color="primary">
+                <Button type="submit" variant="contained" className='btn-compra' color="primary">
                     Finalizar
                 </Button>
             </form>

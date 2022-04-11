@@ -66,12 +66,8 @@ export default function CenteredGrid() {
 
 
             <Grid container>
-                <Grid item xs={12} className="grid">
+                <Grid item xs={12} className="tab-grid">
                     <TabProduto />
-                </Grid>
-
-                <Grid item xs={12}>
-                    <Paper className={classes.paper}>xs=12</Paper>
                 </Grid>
 
             </Grid>

@@ -68,10 +68,15 @@ export default function CenteredGrid() {
 
 
             <Grid container className="grid-base">
-                <Grid container item xs={12} className="grid-container">
-                    <img src="https://cdn.discordapp.com/attachments/946051833481285672/962057611245658113/telasProdigio-07.png" />
+
+                <Grid item xs={8} className="grid-container">
+                <iframe src="https://calendar.google.com/calendar/embed?src=projetoprodigiot44%40gmail.com&ctz=America%2FSao_Paulo" style={{border: 0 }}></iframe>
                 </Grid>
 
+                <Grid item xs={4} className='grid-img'>
+                <img src="https://i.imgur.com/p4DtCv6.png" />
+                </Grid>
+                
             </Grid>
         </div>
     );

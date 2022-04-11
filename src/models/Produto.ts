@@ -8,6 +8,7 @@ interface Produto {
     agenda: string;
     valor: number;
     categoria?: Categoria | null;
+    foto: string;
 
 }
 
