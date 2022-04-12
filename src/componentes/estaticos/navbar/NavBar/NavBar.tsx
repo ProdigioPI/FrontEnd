@@ -1,20 +1,9 @@
 import React from 'react';
 import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { Box, Button, ButtonGroup, Grid, TextField } from '@mui/material';
-import { Link, useHistory } from 'react-router-dom';
-import HomeIcon from '@material-ui/icons/Home';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem'
-import MenuIcon from '@material-ui/icons/Menu';
-
-
-import SearchIcon from '@material-ui/icons/Search';
-import { Avatar, createStyles, makeStyles, Theme } from '@material-ui/core';
-
+import { Link } from 'react-router-dom';
 import './NavBar.css';
-import TabProduto from '../../../produtos/tabprodutos/TabProduto';
+
 
 
 function NavBar() {

@@ -12,7 +12,7 @@
     display: flex;
     justify-content: flex-end;
 }
-.button-home-nav{
+.button-home-nav-professor{
     margin-right: 22% !important;
     
 }
@@ -69,7 +69,7 @@ button.back:hover{
     color: #00091a;
 }
 
-.logo-navbar img{
+.logo-navbar-professor img{
     height: 50px;
     padding-top: 10px;
 }
