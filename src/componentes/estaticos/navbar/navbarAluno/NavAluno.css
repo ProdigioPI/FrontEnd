@@ -12,8 +12,8 @@
     display: flex;
     justify-content: flex-end;
 }
-.button-home-nav{
-    margin-right: 59% !important;
+.button-home-nav-aluno{
+    margin-right: 75% !important;
     
 }
 .font-menu-navbar{
@@ -70,7 +70,7 @@ button.back:hover{
     color: #000000;
 }
 
-.logo-navbar img{
+.logo-navbar-aluno img{
     height: 50px;
     padding-top: 10px;
 }

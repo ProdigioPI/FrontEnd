@@ -130,28 +130,6 @@ function SimpleMenu() {
                             Adicionar Aulas
                         </Typography>
                     </Link>
-
-                </MenuItem>
-                <MenuItem onClick={handleClose}>
-                    <Link className='text-decorator-none' to='/formularioCategoria'>
-                        <Typography className='font-menu-navbar icon-nav' variant="h5" >
-                            Adicionar Materia
-                        </Typography>
-                    </Link>
-                </MenuItem>
-                <MenuItem onClick={handleClose}>
-                    <Link className='text-decorator-none' to='/categorias'>
-                        <Typography className='font-menu-navbar icon-nav' variant="h5" >
-                            Todas as Materias
-                        </Typography>
-                    </Link>
-                </MenuItem>
-                <MenuItem onClick={handleClose}>
-                    <Link className='text-decorator-none' to=''>
-                        <Typography className='font-menu-navbar icon-nav' variant="h5" >
-                            Configurações
-                        </Typography>
-                    </Link>
                 </MenuItem>
                 <MenuItem onClick={handleClose}>
 
@@ -175,8 +153,8 @@ const token = useSelector<UserState, UserState["tokens"]>(
         navProfessor =  <AppBar className="back-navbar" position="static">
         <Toolbar className="end-navbar">
 
-            <Link className='text-decorator-none button-home-nav' to='/home/professor'>
-                <Typography className='logo-navbar' variant="h5">
+            <Link className='text-decorator-none button-home-nav-professor' to='/home/professor'>
+                <Typography className='logo-navbar-professor' variant="h5">
                     <img src="https://imgur.com/UNNxFgo.png" />
                 </Typography>
             </Link >
