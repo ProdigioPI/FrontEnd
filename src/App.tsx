@@ -21,6 +21,7 @@ import store from './store/store';
 import HomePrincipal from './paginas/home/HomePrincipal';
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import HomePublico from './paginas/home/homepublico/HomePublico';
 
 
 function App() {
@@ -32,9 +33,8 @@ function App() {
         <Switch>
           <div style={{ minHeight: '100vh' }}>
             <Route exact path='/'>
-
               <NavBar />
-              <Login />
+              <HomePublico />
             </Route>
 
             <Route path='/login'>

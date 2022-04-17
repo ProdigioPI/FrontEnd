@@ -1,0 +1,190 @@
+.banner {
+    background-image: url('https://media.discordapp.net/attachments/946051833481285672/961982544516096010/telasProdigio_telaLogin.png?width=705&height=397');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.banner-alinhamento {
+padding: 10%;
+width: 30%;
+}
+.banner-alinhamento h3{
+    font-size: 2.5em !important;
+    color: #fff;
+}
+
+.banner .btn-home {
+    background-color: #ffe603 !important;
+    margin: 2% !important;
+    width: 80% !important;
+    font-size: 1.5em !important;
+    font-family: Tahoma, sans-serif !important;
+    color: #151d24 !important;
+    font-weight: bold !important;
+}
+
+.banner .btn-home:hover{
+    background-color: #151d24 !important;
+    color: #fff !important;
+    box-shadow: #151d24 2px 2px 2px;
+}
+
+
+.missao {
+    background-image: url('https://cdn.discordapp.com/attachments/946051833481285672/962001207403098112/telasProdigio_telaCadastro.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.missao .missao-texto{
+    padding: 5%;
+    width: 40%;
+    color: #fff;
+}
+
+.missao .missao-texto p{
+    font-size: 1.4em !important;
+}
+
+
+
+.equipe {
+    background-color: #151d24 !important;
+    height: 62vh;
+}
+
+.equipe-1 {
+    background-color: #151d24 !important;
+    height: 30vh !important;
+    vertical-align: middle;
+    margin-top: 1% !important;
+}
+
+.equipe-1 h4 {
+    text-align: center;
+    color: #fff !important;
+    font-family: Tahoma, Verdana, sans-serif;
+}
+.equipe-1 a {
+    text-decoration: none !important;
+}
+
+.equipe-1 img {
+    width: 95%;
+    margin: 1%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* border-radius: 100%; */
+}
+
+.equipe-1 img:hover {
+    width: 80%;
+    transition: 2s;
+}
+
+
+.equipe-2 {
+    background-color: #151d24 !important;
+    height: 30vh !important;
+    justify-content: center;
+}
+
+.equipe-2 h4 {
+    text-align: center;
+    color: #fff;
+    font-family: Tahoma, Verdana, sans-serif;
+}
+.equipe-2 a {
+    text-decoration: none !important;
+}
+
+.equipe-2 img {
+    width: 80%;
+    margin: 1%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* border-radius: 100%; */
+}
+
+.equipe-2 img:hover {
+    width: 100%;
+    transition: 2s;
+}
+
+.end-base {
+
+}
+
+.parceiros {
+    background-color: #151d24 !important;
+    height: 22vh;
+}
+.parceiros img{
+    width: 100%;
+}
+
+.ods {
+    background-image: url('https://cdn.discordapp.com/attachments/946051833481285672/962024603448918096/telasProdigio-04.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+}
+
+.Newsletter {
+    background-color: #151d24 !important;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff !important;
+}
+
+.Newsletter input{
+    color: #fff !important;
+}
+.MuiFormLabel-root .Newsletter{
+    color: #fff !important;
+}
+
+.Newsletter h4{
+    text-align: center !important;
+}
+.Newsletter .news{
+    text-align: center !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Newsletter .btn-news{
+    width: 60%;
+    font-size: 1.3em;
+    background-color: #2d3f4e !important;
+}
+
+.Newsletter label{
+    color: #ffffff90;
+}
+
+.Newsletter .MuiInputBase-input{
+    color: #fff !important;
+}
+
+.Newsletter .MuiFormLabel-root.Mui-focused{
+    color: #ffffff90 !important;
+}
+.Newsletter .MuiOutlinedInput-notchedOutline{
+    border-color: #ffffff90 !important;
+}
