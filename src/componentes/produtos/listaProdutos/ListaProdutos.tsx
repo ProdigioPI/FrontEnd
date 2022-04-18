@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Produto from '../../../models/Produto';
 import { busca } from '../../../services/Service'
-import { Box, Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
+import { Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
 import './ListaProdutos.css';
 import { useHistory } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import { UserState } from '../../../store/tokens/keysRedux';
 import { toast } from 'react-toastify'
+import Box from '@mui/material/Box';
 
 function ListaProdutos() {
 

@@ -14,7 +14,7 @@ function NavBar() {
                  
                         <Link className='text-decorator-none button-home-nav' to='/login'>
                             <Typography className='logo-navbar' variant="h5">
-                            <img src="https://imgur.com/UNNxFgo.png" />
+                            <img src="https://cdn.discordapp.com/attachments/946051833481285672/965618151305936926/01_-_Logotipo_Prodigio.png" />
                             </Typography>
                         </Link >
 

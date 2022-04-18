@@ -134,7 +134,7 @@ function NavAluno() {
          
                 <Link className='text-decorator-none button-home-nav-aluno' to='/home/aluno'>
                     <Typography className='logo-navbar-aluno' variant="h5">
-                    <img src="https://imgur.com/UNNxFgo.png" />
+                    <img src="https://cdn.discordapp.com/attachments/946051833481285672/965618151305936926/01_-_Logotipo_Prodigio.png" />
                     </Typography>
                 </Link >
 

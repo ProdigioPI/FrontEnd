@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
+import { Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import Categoria from '../../../models/Categoria';
 import './ListaCategorias.css';
@@ -8,6 +8,7 @@ import { busca } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { UserState } from '../../../store/tokens/keysRedux';
 import { toast } from 'react-toastify';
+import Box from '@mui/material/Box';
 
 function ListaCategorias() {
     const [categoria, setCategorias] = useState<Categoria[]>([])

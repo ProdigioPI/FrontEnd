@@ -22,6 +22,7 @@ import HomePrincipal from './paginas/home/HomePrincipal';
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import HomePublico from './paginas/home/homepublico/HomePublico';
+import FooterPublico from './componentes/estaticos/footerpublico/FooterPublico';
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
             <Route exact path='/'>
               <NavBar />
               <HomePublico />
+              <FooterPublico />
             </Route>
 
             <Route path='/login'>
