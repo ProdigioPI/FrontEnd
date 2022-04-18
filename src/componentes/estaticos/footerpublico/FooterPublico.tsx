@@ -3,21 +3,20 @@ import { Typography, Grid, Button } from '@material-ui/core';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import './Footer.css';
+import './FooterPublico.css';
 import { useSelector } from 'react-redux';
 import { UserState } from '../../../store/tokens/keysRedux';
 import Box from '@mui/material/Box';
 
 
 
-function Footer(){
-    const token = useSelector<UserState, UserState["tokens"]>(
-        (state) => state.tokens
-    )
-    var footer
-    if(token != ''){
+function FooterPublico(){
 
-        footer = <Grid container className="foot-base">
+
+    return (
+       <>
+       
+       <Grid container className="foot-base">
         <Grid container className="foot-links">
         <Grid item xs={4} className='foot-style'>
                 <Box>
@@ -45,7 +44,7 @@ function Footer(){
                 <h5 className="title2">Mais informações</h5>
                 <Box display="flex" justifyContent="space-evenly" >
                     <Box>
-                    <ul className="list-unstyled">
+                        <ul className="list-unstyled">
                             <li className="list-unstyled">
                                 <a target="blank" href="#!">Sobre nós</a>
                             </li>
@@ -61,7 +60,7 @@ function Footer(){
                         </ul>
                     </Box>
                     <Box>
-                    <ul className="list-unstyled">
+                        <ul className="list-unstyled">
                             <li className="list-unstyled">
                                 <a target="blank" href="#!">Contato</a>
                             </li>
@@ -100,15 +99,8 @@ function Footer(){
         </Box>
         </Grid>
     </Grid>
-        
-    }
-
-    return (
-       <>
-       
-            {footer}
        </>
     );
 }
 
-export default Footer;
+export default FooterPublico;

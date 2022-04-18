@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { AppBar, Tab, Tabs, Typography, Box, CardContent, Card, CardActions, Button } from '@material-ui/core';
+import { AppBar, Tab, Tabs, Typography, CardContent, Card, CardActions, Button } from '@material-ui/core';
 import { TabContext, TabPanel } from '@material-ui/lab';
 //import ListaPostagem from '../listapostagem/ListaPostagem';
 //import ListaProduto from '../listaproduto/ListaProduto';
+import Box from '@mui/material/Box';
 
 import './TabProduto.css';
 

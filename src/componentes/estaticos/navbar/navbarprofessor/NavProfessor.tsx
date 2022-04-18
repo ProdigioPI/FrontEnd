@@ -155,7 +155,7 @@ const token = useSelector<UserState, UserState["tokens"]>(
 
             <Link className='text-decorator-none button-home-nav-professor' to='/home/professor'>
                 <Typography className='logo-navbar-professor' variant="h5">
-                    <img src="https://imgur.com/UNNxFgo.png" />
+                    <img src="https://cdn.discordapp.com/attachments/946051833481285672/965618151305936926/01_-_Logotipo_Prodigio.png" />
                 </Typography>
             </Link >
 

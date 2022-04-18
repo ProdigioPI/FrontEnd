@@ -206,7 +206,6 @@ function Cadastrar() {
 
                   <Box marginY={2} textAlign='center' display="flex" justifyContent="center" alignItems="center">
                     <FormControl className='form-tipo'>
-                      <FormLabel id="demo-radio-buttons-group-label">TIPO DE CONTA:</FormLabel>
                       <RadioGroup
                         aria-labelledby="demo-radio-buttons-group-label" defaultValue="tipo" name="tipo"
                         onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}>
@@ -217,7 +216,7 @@ function Cadastrar() {
                   </Box>
 
                   <Box marginY={1} textAlign='center'>
-                    <a href='https://drive.google.com/file/d/1VTt0NvYa2JbRKMeIzGRL6fUyz7kDhKCg/view?usp=sharing' id="link-termo">
+                    <a target="blank" href='https://drive.google.com/file/d/1VTt0NvYa2JbRKMeIzGRL6fUyz7kDhKCg/view?usp=sharing' id="link-termo">
                       <Typography>Termos e Condições de Uso</Typography>
                     </a>
                     <FormControlLabel className='caixa-termos'

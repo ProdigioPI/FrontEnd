@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Typography, Button, Box, Card, CardActions, CardContent } from "@material-ui/core"
+import { Typography, Button, Card, CardActions, CardContent } from "@material-ui/core"
 import './DeletarProduto.css';
 import { useHistory, useParams } from 'react-router-dom';
 import Produto from '../../../models/Produto';
@@ -7,6 +7,7 @@ import { buscaId, deleteId } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { UserState } from '../../../store/tokens/keysRedux';
 import { toast } from 'react-toastify';
+import Box from '@mui/material/Box';
 
 function DeletarProduto() {
   let history = useHistory();
