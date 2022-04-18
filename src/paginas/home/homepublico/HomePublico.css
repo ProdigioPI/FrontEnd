@@ -59,6 +59,10 @@ width: 30%;
     color: #151d24;
 }
 
+.missao-texto button:hover{
+    background-color: #151d24;
+}
+
 .m-texto{
     justify-content: left !important;
     align-items: left !important;
@@ -124,6 +128,10 @@ width: 30%;
     font-size: 1.4em !important;
     background-color: #2d3f4e;
     width: 70%;
+}
+
+.ods-texto button:hover{
+    background-color: #151d24;
 }
 
 .ods-img img{
