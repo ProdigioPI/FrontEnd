@@ -10,8 +10,9 @@ import './CarouselHome.css'
 function CarouselHome(){
 
     var items = [
-        { img: "https://cdn.discordapp.com/attachments/946058214108180481/962061499671670864/1547-03.jpg" },
-        { img: "https://cdn.discordapp.com/attachments/946058214108180481/962061500086878249/1547-04.jpg" }
+        { img: "https://cdn.discordapp.com/attachments/945709660856520787/965796062461829160/telasProdigio-03.jpg" },
+        { img: "https://cdn.discordapp.com/attachments/945709660856520787/965796985225482250/telasProdigio-07.jpg" },
+        { img: "https://cdn.discordapp.com/attachments/945709660856520787/965796984889950268/telasProdigio-04.jpg" }
     ]
 
 

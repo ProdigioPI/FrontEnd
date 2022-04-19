@@ -74,7 +74,7 @@ export default function CenteredGrid() {
                 </Grid>
 
                 <Grid item xs={4} className='grid-img'>
-                <img src="https://i.imgur.com/p4DtCv6.png" />
+                <img src="https://cdn.discordapp.com/attachments/945709660856520787/965805061852770314/telasProdigio-11.jpg" />
                 </Grid>
                 
             </Grid>

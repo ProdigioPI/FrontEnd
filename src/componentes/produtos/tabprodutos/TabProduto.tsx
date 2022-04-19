@@ -102,12 +102,12 @@ function TabProduto() {
         <Card variant="outlined" className='tab-produto'>
             <CardContent>
                 <Typography color="textSecondary" gutterBottom>
-                    Produto
+                    
                 </Typography>
                 <Typography className='produto-img'>
                   <img src={produto.foto}/>
                 </Typography>
-                <Typography variant="h5" component="h2">
+                <Typography variant="h5" component="h2" className="body3">
                     {produto.nomeMateria}
                 </Typography>
                 <Typography variant="body2" component="p">
@@ -119,7 +119,7 @@ function TabProduto() {
                 <Typography variant="body2" component="p">
                     Agende sua aula por: R$ {produto.valor}
                 </Typography>
-                <Typography variant="body2" component="p">
+                <Typography variant="body2" className="body3" component="p">
                     {produto.categoria?.materia}
                 </Typography>
             </CardContent>
