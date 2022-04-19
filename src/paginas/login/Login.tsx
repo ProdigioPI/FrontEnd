@@ -126,14 +126,14 @@ function Login() {
                                 </Box>
                                 <Box marginTop={2} textAlign='center'>
                                     <Button type="submit" variant="contained" className="botao">
-                                        Login
+                                        Entrar
                                     </Button>
                                 </Box>
 
 
                                 <Box marginTop={2} marginBottom={2} textAlign='center'>
                                     <Typography className='form-conta' color="inherit">
-                                        Você já tem sua conta?
+                                        Você não tem uma conta?
                                     </Typography>
                                     <Link to='/cadastro' className='text-decorator-none'>
                                         <Typography className='text-link' variant="h5" color="inherit">

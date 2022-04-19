@@ -18,31 +18,30 @@ function Footer(){
     if(token != ''){
 
         footer = <Grid container className="foot-base">
-        <Grid container className="foot-links">
+        <Grid container className="foot-links" >
         <Grid item xs={4} className='foot-style'>
                 <Box>
                     <h5 className="title2">Sobre nós</h5>
-                    <p>
-                        Plataforma ecommerce que conecta alunos e tutores, 
-                        por valores acessiveis a todos.
+                    <p className="title2-p">
+                        Plataforma e-commerce que tem como objetivo conectar alunos e tutores, 
+                        por valores acessíveis.
                         Promovendo educação de qualidade e alfabetização por
-                        meio da técnologia. Saiba mais.
+                        meio da técnologia. 
                     </p>
                 </Box>
             </Grid>
             <Grid item xs={4} className='foot-style'>
                 <Box>
                     <h5 className="title2">Objetivos</h5>
-                    <p>
-                        Plataforma ecommerce que conecta alunos e tutores, 
-                        por valores acessiveis a todos.
-                        Promovendo educação de qualidade e alfabetização por
-                        meio da técnologia. Saiba mais.
+                    <p className="title2-p">
+                    Propocionamos acesso a educação de qualidade por um custo razoável,
+                    como proposto no objetivo da ODS 4 da ONU, para eliminar disparidades de gênero e riqueza,
+                     e alcançar o acesso universal a um ensino de qualidade.
                     </p>
                 </Box>
             </Grid>
             <Grid item xs={4} className='foot-style'>
-                <h5 className="title2">Mais informações</h5>
+                <h5 className="title3">Mais informações</h5>
                 <Box display="flex" justifyContent="space-evenly" >
                     <Box>
                     <ul className="list-unstyled">

@@ -23,14 +23,14 @@
 }
 
 .produto-img img{
-   width: 18vw;
-   height: 15vh;
-   border-radius: 2%;
+   width: 18.5vw;
+   height: 20vh;
+   border-radius: 3%;
 }
 .MuiCard-root.tab-produto{
    width: 20vw !important;
    height: 45vh !important;
-   box-shadow: 1px 1px 5px #2d3f4e !important
+   box-shadow: 1.5px 1.5px 4px #2d3f4e !important
 }
 
 .btn-compra.MuiButton-containedPrimary{
@@ -38,4 +38,7 @@
 }
 .btn-compra.MuiButton-containedPrimary:hover{
    background-color: #151d24 !important;
+}
+.body3{
+   font-weight: bold !important;
 }

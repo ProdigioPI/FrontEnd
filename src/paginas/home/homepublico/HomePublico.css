@@ -22,8 +22,10 @@ width: 30%;
 .banner .btn-home {
     background-color: #FFFBD6 !important;
     margin: 2% !important;
+    margin-top: 3% !important;
     width: 80% !important;
-    font-size: 1.1em !important;
+    height: 70px;
+    font-size: 1.4em !important;
     font-family: Tahoma, sans-serif !important;
     color: #151d24 !important;
     font-weight: bold !important;
@@ -68,11 +70,18 @@ width: 30%;
     align-items: left !important;
     display:flex;
     flex-wrap: wrap;
-    padding-right: 5%;
+    padding-right: 10%;
+    padding-bottom: 30px;
 }
 
 .m-texto h2{
-    font-size: 1.9em !important;
+    font-size: 3em !important;
+    margin-bottom: 5px;
+}
+
+.m-texto p{
+    font-size: 200px !important;
+    margin-top: 10px;
 }
 
 .m-texto button{
@@ -80,7 +89,8 @@ width: 30%;
     border-radius: 20px;
     font-size: 1.4em !important;
     background-color: #2d3f4e;
-    width: 70%;
+    width:60%;
+    height: 70px;
 }
 
 .box-video{
@@ -119,7 +129,13 @@ width: 30%;
 }
 
 .ods-texto h2{
-    font-size: 1.9em !important;
+    font-size: 3em !important;
+    margin-bottom: 5px;
+}
+.ods-texto p{
+    font-size: 25px !important;
+    padding-right: 10%;
+    padding-bottom: 20px;
 }
 
 .ods-texto button{
@@ -127,7 +143,8 @@ width: 30%;
     border-radius: 20px;
     font-size: 1.4em !important;
     background-color: #2d3f4e;
-    width: 70%;
+    width: 50%;
+    height: 70px;
 }
 
 .ods-texto button:hover{
@@ -136,12 +153,14 @@ width: 30%;
 
 .ods-img img{
     width: 100%;
+    padding-bottom: 0px;
 }
 
 
 .Newsletter {
     background-color: #151d24 !important;
     height: 10vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -166,7 +185,7 @@ width: 30%;
     align-items: center;
 }
 .Newsletter .btn-news{
-    width: 30%;
+    width: 50%;
     background-color: #fff !important;
 }
 .icon-size{

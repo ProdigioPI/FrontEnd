@@ -127,7 +127,7 @@ function SimpleMenu() {
                 <MenuItem onClick={handleClose}>
                     <Link className='text-decorator-none' to='/formularioProduto'>
                         <Typography className='font-menu-navbar icon-nav' variant="h5" >
-                            Adicionar Aulas
+                            Adicionar aulas
                         </Typography>
                     </Link>
                 </MenuItem>

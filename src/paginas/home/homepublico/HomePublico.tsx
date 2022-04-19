@@ -20,14 +20,14 @@ function HomePublico() {
                             <img src="https://cdn.discordapp.com/attachments/946051833481285672/965637973485965352/texto-06.png" />
                             <Link to='/login' className='text-decorator-none'>
                                 <Button variant='contained' className="btn-home">
-                                    Login
+                                    Entrar
                                 </Button>
                             </Link>
                         </Box>
                         <Box className="box-home">
                             <Link to='/cadastro' className='text-decorator-none'>
                                 <Button variant='contained' className="btn-home">
-                                    Cadastre-se
+                                    Crie sua conta
                                 </Button>
                             </Link>
                         </Box>
@@ -38,7 +38,7 @@ function HomePublico() {
             <Grid container xs={12} className='missao'>
                 <Grid item xs={6} className='missao-video'>
                     <Box className='box-video'>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/ZSrhXP4-aec" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                        <iframe width="600" height="360" src="https://www.youtube.com/embed/ZSrhXP4-aec" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
                     </Box>
                 </Grid>
                 <Grid item xs={6} className='missao-texto'>

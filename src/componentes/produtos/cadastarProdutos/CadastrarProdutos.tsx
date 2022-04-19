@@ -166,11 +166,11 @@ function CadastrarProdutos() {
         <Container maxWidth="sm" className="topo">
             <form onSubmit={onSubmit}>
                 <Typography variant="h3" color="textSecondary" component="h1" align="center" className='titulo-funcao'>Cadastrar Aula</Typography>
-                <TextField value={produto.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="foto" label="Foto da Aula" variant="outlined" name="foto" margin="normal" fullWidth />
-                <TextField value={produto.nomeMateria} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="nomeMateria" label="Assunto da Aula" variant="outlined" name="nomeMateria" margin="normal" fullWidth  required/>
-                <TextField value={produto.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="descricao" label="descricao" variant="outlined" name="descricao" margin="normal" fullWidth required/>
-                <TextField value={produto.agenda} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="agenda" label="agenda" variant="outlined" name="agenda" margin="normal" fullWidth />
-                <TextField value={produto.valor} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="valor" label="valor" variant="outlined" name="valor" margin="normal" fullWidth required/>
+                <TextField value={produto.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="foto" label="Foto da aula" variant="outlined" name="foto" margin="normal" fullWidth />
+                <TextField value={produto.nomeMateria} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="nomeMateria" label="Assunto da aula" variant="outlined" name="nomeMateria" margin="normal" fullWidth  required/>
+                <TextField value={produto.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="descricao" label="Descrição" variant="outlined" name="descricao" margin="normal" fullWidth required/>
+                <TextField value={produto.agenda} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="agenda" label="Agenda" variant="outlined" name="agenda" margin="normal" fullWidth />
+                <TextField value={produto.valor} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="valor" label="Valor" variant="outlined" name="valor" margin="normal" fullWidth required/>
 
                 <FormControl >
                     <InputLabel id="demo-simple-select-helper-label">Categoria </InputLabel>
